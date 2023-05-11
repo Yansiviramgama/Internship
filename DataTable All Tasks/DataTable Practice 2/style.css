@@ -1,0 +1,10 @@
+input,select{
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: solid;
+    border-color: beige;
+}
+.modal{
+    z-index: 1060 !important;
+}

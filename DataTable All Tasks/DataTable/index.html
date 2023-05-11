@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script src="https://kit.fontawesome.com/354ee1c489.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>DataTable</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" id="AddData" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            ADD DATA
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="mt-3">
+                                <label>Name</label><br>
+                                <input type="text" id="nameinput" class="inputs mt-2" name="name"
+                                    placeholder="  Enter your Name..">
+                                <span class="nameinput"></span>
+                            </div>
+                            <div class="mt-4">
+                                <label>Date Of Birth</label><br>
+                                <input type="date" id="DOBinput" class="inputs mt-2" name="date" placeholder="">
+                                <span class="DOBinput"></span>
+                            </div>
+                            <div class="mt-4">
+                                <label>Gender</label><br><span class="inputval"></span>
+                                <br>
+                                <input type="radio" class="mt-2" id="gender" name="gender" value="Male">
+                                <label for="html">Male</label>
+                                <input type="radio" id="gender" class="mt-2" name="gender" value="Female">
+                                <label for="html">Female</label>
+                                <input type="radio" id="gender" class="mt-2" name="gender" value="Other">
+                                <label for="html">other</label>
+                            </div>
+                            <div class="mt-4">
+                                <label>Email</label><br>
+                                <input type="email" id="emailinput" class="inputs mt-2" name="email"
+                                    placeholder="  Enter your Email..">
+                                <span class="emailinput"></span>
+                            </div>
+                            <div class="mt-3">
+                                <label>Contact Number</label><br>
+                                <input type="Number" id="numinput" class="inputs mt-2" name="number"
+                                    placeholder="  Enter your Contact No...">
+                                <span class="numinput"></span>
+                            </div>
+                            <div class="mt-4">
+                                <div class="input-group mb-3">
+                                    <label>Country</label>
+                                    <select class="custom-select inputs mt-2" id="countryinput">                                    
+                                        <option selected>Choose Country...</option>
+                                        <option value="1">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Rasia">Rasia</option>
+                                        <option value="China">China</option>
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Nepal">Nepal</option>
+                                        
+                                    </select>
+                                    <span class="countryinput"></span>
+                                </div>
+                              
+                            </div>
+                            <div class="mt-4">
+                                <div class="input-group mb-3">
+                                    <label>State</label>
+                                    <select class="custom-select inputs mt-2" id="Stateinput">
+                                        
+                                        <option selected>Choose State...</option>
+                                        <option value="Gujrat">Gujrat</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Melborn">Melborn</option>
+                                        <option value="Rusk">Rusk</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="London">London</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                    </select>
+                                    <span class="Stateinput"></span>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4">
+                                <div class="input-group mb-3">
+                                    <label>City</label> <select class="custom-select inputs mt-2" id="cityinput">                                    
+                                        <option value="Ahemdabad">Ahemdabad</option>
+                                        <option value="Rajkot">Rajkot</option>
+                                        <option value="Vadodara">Vadodara</option>
+                                        <option value="Ohiyo">Ohiyo</option>
+                                        <option value="sydney">sydney</option>
+                                        <option value="Bali">Bali</option>
+                                        <option value="Veitnam">Veitnam</option>
+                                    </select>
+                                    <span class="cityinput"></span>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="Save" class="btn btn-primary">Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-5">
+            <table class="table table-bordered" id="Table">
+                <!-- <thead>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Contact Number</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+    
+                </tbody> -->
+            </table>
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdrop" aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Add Treatment Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mt-3">
+                            <label>Disease</label><br> 
+                            <input type="text" class="inputs mt-2" name="name" id="Disease" placeholder="  Enter Disease..">
+                            <span class="diseaseinput fw-bold"></span>
+                        </div>
+                        <div class="mt-3">
+                            <label>Doctor</label><br>
+                            <input type="text" class="inputs mt-2" name="name" id="Doctor" placeholder="  Enter Doctor Name..">
+                            <span class="doctorinput fw-bold"></span>
+                        </div>
+                        <div class="mt-3">
+                            <label>Medicine</label><br>
+                            <input type="text" class="inputs mt-2" id="Medicine" name="name" placeholder="  Enter Medicine Name..">
+                            <span class="medicineinput fw-bold"></span>
+                        </div>
+                        <div class="mt-4">
+                            <label>Follow Up Date</label><br>
+                            <input type="date" class="inputs mt-2" id="FollowUpDate" name="date" placeholder="">
+                            <span class="Dateinput fw-bold"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="AddSave" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

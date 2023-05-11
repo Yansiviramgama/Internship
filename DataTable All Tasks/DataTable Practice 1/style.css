@@ -1,0 +1,13 @@
+input{
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+}
+.modal{
+    z-index: 1050 !important;
+}
+label{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: large;
+}
