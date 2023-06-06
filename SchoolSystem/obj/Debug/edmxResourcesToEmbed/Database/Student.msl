@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="YansiViramgama325ModelStoreContainer" CdmEntityContainer="YansiViramgama325Entities">
+    <EntitySetMapping Name="Stu_City">
+      <EntityTypeMapping TypeName="YansiViramgama325Model.Stu_City">
+        <MappingFragment StoreEntitySet="Stu_City">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stu_Country">
+      <EntityTypeMapping TypeName="YansiViramgama325Model.Stu_Country">
+        <MappingFragment StoreEntitySet="Stu_Country">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stu_State">
+      <EntityTypeMapping TypeName="YansiViramgama325Model.Stu_State">
+        <MappingFragment StoreEntitySet="Stu_State">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Data">
+      <EntityTypeMapping TypeName="YansiViramgama325Model.Student_Data">
+        <MappingFragment StoreEntitySet="Student_Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_Country" FunctionName="YansiViramgama325Model.Store.Sp_AddEdit_Country" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_Country" FunctionName="YansiViramgama325Model.Store.Sp_Delete_Country" />
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_State" FunctionName="YansiViramgama325Model.Store.Sp_AddEdit_State" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_State" FunctionName="YansiViramgama325Model.Store.Sp_Delete_State" />
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_City" FunctionName="YansiViramgama325Model.Store.Sp_AddEdit_City" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_City" FunctionName="YansiViramgama325Model.Store.Sp_Delete_City" />
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="YansiViramgama325Model.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_User">
+      <EntityTypeMapping TypeName="YansiViramgama325Model.Student_User">
+        <MappingFragment StoreEntitySet="Student_User">
+          <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_StudentData" FunctionName="YansiViramgama325Model.Store.Sp_AddEdit_StudentData" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_StudentData" FunctionName="YansiViramgama325Model.Store.Sp_Delete_StudentData" />
+    <FunctionImportMapping FunctionImportName="Sp_all" FunctionName="YansiViramgama325Model.Store.Sp_all" />
+  </EntityContainerMapping>
+</Mapping>

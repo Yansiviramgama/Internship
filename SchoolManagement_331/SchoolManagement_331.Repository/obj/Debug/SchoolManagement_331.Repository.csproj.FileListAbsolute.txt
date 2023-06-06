@@ -1,0 +1,17 @@
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Repository.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Repository.pdb
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Models.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\EntityFramework.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Models.pdb
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Models.dll.config
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\EntityFramework.xml
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\obj\Debug\SchoolManagement_331.Repository.csproj.AssemblyReference.cache
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\obj\Debug\SchoolManagement_331.Repository.csproj.CoreCompileInputs.cache
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\obj\Debug\SchoolManagement_331.Repository.csproj.CopyComplete
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\obj\Debug\SchoolManagement_331.Repository.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\obj\Debug\SchoolManagement_331.Repository.pdb
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Repository.dll.config
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Helper.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\SchoolManagement_331.Helper.pdb
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Repository\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,0 +1,76 @@
+﻿@model List<SchoolSystem.Database.Student_Data>
+
+@{
+    ViewBag.Title = "ShowStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .container_b {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .table_bg {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        background-color: black;
+        /*box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;*/
+        /*box-shadow: 0 0 15px #888888;*/
+        /*background-color*/
+    }
+
+    .main {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .dataTables_wrapper {
+        padding: 30px;
+    }
+</style>
+<h2 class="colortext text-center">ShowStudent</h2>
+
+<div class="container_b">
+    <div class="table_bg">
+        <div class="main colortext">
+            <table class="table DataTable colortext">
+                <thead>
+                    <tr class="colortext">
+                        <th>FirstName </th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>ContactNumber</th>
+                        <th>CityName</th>
+                        <th>StateName</th>
+                        <th>CountryName</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model)
+                    {
+                        <tr class="colortext">
+                            <td>@i.FirstName</td>
+                            <td>@i.LastName</td>
+                            <td>@i.Email</td>
+                            <td>@i.ContactNumber</td>
+                            <td>@i.Stu_City.CityName</td>
+                            <td>@i.Stu_State.StateName</td>
+                            <td>@i.Stu_Country.CountryName</td>
+                            <td>
+                                <a href="/Student/AddStudent/@i.ID" class="btn btn-info"> Edit </a>
+                                <a href="/Student/StudentDetail/@i.ID" class="btn btn-success"> Details </a>
+                                <a href="/Student/DeleteStudent/@i.ID" class="btn btn-danger"> Delete </a>
+                            </td>
+                            
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

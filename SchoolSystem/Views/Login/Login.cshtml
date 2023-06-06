@@ -1,0 +1,54 @@
+﻿@model SchoolSystem.Models.Login
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<main class="mdl-layout__content">
+    <div class="mdl-card mdl-card__login mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text color--dark-gray">
+            <div class="mdl-grid">
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <span class="mdl-card__title-text text-color--smooth-gray">DARKBOARD</span>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <span class="login-name text-color--white">Sign in</span>
+                        <span class="login-secondary-text text-color--smoke">Enter fields to sign in to DARKBOARD</span>
+                    </div>
+                    if (TempData["Error"] != null)
+                    {
+                        <p class="text-danger">@TempData["Error"] </p>
+                    }
+
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="e-mail">Email</label>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "mdl-textfield__input", id = "e-mail" })
+                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="password">Password</label>
+                            @Html.PasswordFor(x => x.Password, new { @class = "mdl-textfield__input", id = "password" })
+                            @Html.ValidationMessageFor(X => X.Password, "", new { @class = "text-danger" })
+
+                        </div>
+                        <a href="/Login/ForgotPassword" class="login-link">Forgot password?</a>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone submit-cell">
+                        <a href="/Login/SignUp" class="login-link">Don't have account?</a>
+                        <div class="mdl-layout-spacer"></div>
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised color--light-blue">
+                            SIGN IN
+                        </button>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</main>

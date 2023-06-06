@@ -1,0 +1,142 @@
+﻿@model SchoolSystem.Models.StudentForm
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form in HTML CSS</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="/Content/AddStudent.css" />
+</head>
+<body>
+
+    <div class="container mt-4 p-5">
+        <header class="colortext">Registration Form</header>
+
+        @using (Html.BeginForm("AddStudent", "Student", FormMethod.Post, new { @class = "form" }))
+        {
+            @Html.HiddenFor(x => x.ID, new { @class = "form-control" })
+            <div class="column">
+                <div class="input-box">
+                    <label class="colortext">First Name</label>
+                    @Html.TextBoxFor(x => x.FirstName, "", new { @class = "input", placeholder = "Enter First name" })
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                </div>
+                <div class="input-box">
+                    <label class="colortext">Last Name</label>
+                    @Html.TextBoxFor(x => x.LastName, "", new { @class = "input", placeholder = "Enter Last name" })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label class="colortext">Email Address</label>
+                @Html.TextBoxFor(x => x.Email, "", new { @class = "input", placeholder = "Enter Email Address" })
+                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label class="colortext">Phone Number</label>
+                    @Html.TextBoxFor(x => x.ContactNum, "", new { @class = "input", placeholder = "Enter Contact Number" })
+                    @Html.ValidationMessageFor(x => x.ContactNum, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="input-box">
+                    <label class="colortext">Birth Date</label>
+                    @Html.TextBoxFor(x => x.BirthDate, "", new { @class = "input", @type = "date" })
+                    @Html.ValidationMessageFor(x => x.BirthDate, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+
+                        @Html.RadioButtonFor(x => x.Gender, "Male", new { @class = "input", id = "check-male", name = "gender" })
+                        <label for="check-male">male</label>
+                    </div>
+                    <div class="gender">
+                        @Html.RadioButtonFor(x => x.Gender, "Female", new { @class = "input", id = "check-female", name = "gender" })
+                        <label for="check-female">Female</label>
+                    </div>
+                    <div class="gender">
+                        @Html.RadioButtonFor(x => x.Gender, "Other", new { @class = "input", id = "check-other", name = "gender" })
+                        <label for="check-other">Other</label>
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Gender, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="input-box address">
+                <label class="colortext">Address</label>
+                @Html.TextBoxFor(x => x.Address, new { @class = "input", placeholder = "Enter street address" })
+                @*<input type="text" placeholder="Enter street address" required />
+                    <input type="text" placeholder="Enter street address line 2" required />*@
+                <div class="column">
+                    @Html.DropDownListFor(x => x.Country, ViewBag.CountryList as SelectList, "--Select Country--", new { @class = "select-box select" })
+                    @Html.DropDownListFor(x => x.State, ViewBag.StateList as SelectList, "--Select State--", new { @class = "select-box select" })
+
+
+                </div>
+                <div class="column">
+                    @Html.DropDownListFor(x => x.City, ViewBag.CityList as SelectList, "--Select City--", new { @class = "select-box select" })
+                    @Html.TextBoxFor(x => x.PostalCode, new { @class = "input", type = "number", placeholder = "Enter postal code", name = "PostalCode" })
+
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+
+        }
+
+
+    </div>
+    <script>
+    $("#Country").change(function () {
+        $("#State").html('')
+        $("#City").html('')
+        $("#State").append(`<option value="select state">-- Select State --</option>`)
+        $("#City").append(`<option value="select state">-- Select City --</option>`)
+        var id = $("#Country").val()
+        $.ajax({
+            url: `/Student/GetStates/${id}`,
+            method: "get",
+            success: function (res) {
+                var data = JSON.parse(res);
+
+                data.forEach((ele) => {
+
+                    $("#State").append(`<option value="${ele.ID}">${ele.StateName}</option>`)
+                })
+
+            }
+        })
+    })
+        $("#State").change(function () {
+            $("#City").html('')
+            $("#City").append(`<option value="select state">-- Select City --</option>`)
+            var id = $("#State").val()
+            $.ajax({
+                url: `/Student/GetCity/${id}`,
+                method: "get",
+                success: function (res) {
+                    var data = JSON.parse(res);
+
+                    data.forEach((ele) => {
+
+                        $("#City").append(`<option value="${ele.ID}">${ele.CityName}</option>`)
+                    })
+
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@model SchoolSystem.Models.SignUp
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<main class="mdl-layout__content">
+    <div class="mdl-card mdl-card__login mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text color--dark-gray">
+            <div class="mdl-grid">
+                @using (Html.BeginForm("SignUp", "Login", FormMethod.Post))
+                {
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <span class="mdl-card__title-text text-color--smooth-gray">DARKBOARD</span>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <span class="login-name text-color--white">Sign up</span>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="name">Name</label>
+                            @Html.TextBoxFor(x => x.Name, "", new { @class = "mdl-textfield__input", id = "name" })
+                            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="e-mail">Email</label>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "mdl-textfield__input", id = "e-mail" })
+                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="password">Password</label>
+                            @Html.PasswordFor(x => x.Password, new { @class = "mdl-textfield__input", id = "password" })
+                            @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="password">Confirm Password</label>
+                            @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "mdl-textfield__input", id = "Cpassword" })
+                            @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="Role">User Role</label>
+                            @Html.DropDownListFor(X => X.Role, ViewBag.RoleList as SelectList,"" ,new { @class = "mdl-textfield__input", id = "Role" })
+                            @Html.ValidationMessageFor(x => x.Role, "", new { @class = "text-danger" })
+                        </div>
+
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect checkbox--colored-light-blue checkbox--inline" for="checkbox-1">
+                            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+
+                        </label>
+                        <span class="login-link">I agree all statements in <a href="#" class="underlined">terms of service</a></span>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone submit-cell">
+                        <a href="/Login/Login" class="login-link">I have already signed up</a>
+                        <div class="mdl-layout-spacer"></div>
+
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised color--light-blue">
+                            SIGN UP
+                        </button>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</main>

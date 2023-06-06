@@ -1,0 +1,83 @@
+﻿@model List<SchoolManagement_331.Models.Context.Country>
+@{
+    ViewBag.Title = "ShowCountry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .container_b {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .table_bg {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        background-color: black;
+        color: white;
+        /*box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;*/
+        /*box-shadow: 0 0 15px #888888;*/
+        /*background-color*/
+    }
+
+    .main {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    table {
+        color: white;
+    }
+
+    .dataTables_wrapper {
+        padding: 30px;
+    }
+
+    .colortext {
+        color: white;
+    }
+</style>
+<h2 class="colortext text-center">Show Country</h2>
+
+<div class="container_b">
+    <div class="table_bg">
+        <div class="main">
+            <table class="table DataTable">
+                <thead>
+                    <tr>
+                        <th class="colortext">
+                            Country ID
+                        </th>
+                        <th class="colortext">
+                            Country Name
+                        </th>
+                        <th class="colortext">
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model)
+                    {
+                        <tr>
+                            <td class="colortext">
+                               @i.CountryID
+                            </td>
+                            <td class="colortext">
+                                @i.CountryName
+                            </td>
+                            <td class="colortext">
+                                <a href="/Country/AddCountry/@i.CountryID" class="btn btn-info"> Edit </a>
+
+                                <a href="/Country/DeleteCountry/@i.CountryID" class="btn btn-danger"> Delete </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

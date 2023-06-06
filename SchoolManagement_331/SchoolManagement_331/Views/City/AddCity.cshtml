@@ -1,0 +1,49 @@
+﻿@model SchoolManagement_331.Models.CustomModels.CityCustomeModel
+@{
+    ViewBag.Title = "AddCity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h1 class="text-center colortext">Add New City</h1>
+    </div>
+    <div>
+        @using (Html.BeginForm("AddCity", "City", FormMethod.Post))
+        {
+            <div class="d-flex justify-content-between">
+                @Html.HiddenFor(x => x.CityID, new { @class = "form-control" })
+                @Html.DropDownListFor(X => X.CountryID, (IEnumerable<SelectListItem>)ViewBag.CountryList, " -- Select Country -- ", new { @class = "select-box mx-2", id = "Country" })
+                @Html.DropDownListFor(X => X.StateID, new SelectList(""), " -- Select State -- ", new { @class = "select-box mx-2", id = "State" })
+                @Html.TextBoxFor(x => x.CityName, new { @class = "form-control" })
+                <button type="submit" class="btn btn-primary px-5 mx-5">Save</button>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+    
+    $("#Country").change(function () {
+        $("#State").html('')
+        $("#State").append(`<option value="select state">--Select State--</option>`)
+        var id = $("#Country").val()
+        $.ajax({
+            url: `/City/GetStates/${id}`,
+            method: "get",
+            success: function (res) {
+                var data = JSON.parse(res);
+
+                data.forEach((ele) => {
+
+                    $("#State").append(`<option value="${ele.StateID}">${ele.StateName}</option>`)
+                })
+
+            }
+        })
+    })
+    })
+</script>S
+

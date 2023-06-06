@@ -1,0 +1,74 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" type="image/png" href="~/Content/images/DB_16х16.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Dashboard Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
+          type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/Content/css/lib/getmdl-select.min.css">
+    <link rel="stylesheet" href="~/Content/css/lib/nv.d3.min.css">
+    <link rel="stylesheet" href="~/Content/css/application.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- endinject -->
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+
+    <div class="mdl-layout mdl-js-layout color--gray is-small-screen login">
+        @RenderBody()
+    </div>
+
+    <!-- inject:js -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/js/d3.min.js"></script>
+    <script src="~/Scripts/js/getmdl-select.min.js"></script>
+    <script src="~/Scripts/js/material.min.js"></script>
+    <script src="~/Scripts/js/nv.d3.min.js"></script>
+    <script src="~/Scripts/js/layout/layout.min.js"></script>
+    <script src="~/Scripts/js/scroll/scroll.min.js"></script>
+    <script src="~/Scripts/js/widgets/charts/discreteBarChart.min.js"></script>
+    <script src="~/Scripts/js/widgets/charts/linePlusBarChart.min.js"></script>
+    <script src="~/Scripts/js/widgets/charts/stackedBarChart.min.js"></script>
+    <script src="~/Scripts/js/widgets/employer-form/employer-form.min.js"></script>
+    <script src="~/Scripts/js/widgets/line-chart/line-charts-nvd3.min.js"></script>
+    <script src="~/Scripts/js/widgets/map/maps.min.js"></script>
+    <script src="~/Scripts/js/widgets/pie-chart/pie-charts-nvd3.min.js"></script>
+    <script src="~/Scripts/js/widgets/table/table.min.js"></script>
+    <script src="~/Scripts/js/widgets/todo/todo.min.js"></script>
+    <!-- endinject -->
+
+</body>
+</html>
