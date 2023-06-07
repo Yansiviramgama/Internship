@@ -49,5 +49,21 @@ namespace SchoolManagement_331.Repository.Services
                 return false;
             }
         }
+
+        public User ForgotPassword(SignUpCustomModel customModel)
+        {
+           
+                User user = db.User.Where(x => x.User_Email.ToLower() == customModel.Email.ToLower()).FirstOrDefault();
+                if (user != null)
+                {
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+           
+            
+        }
     }
 }

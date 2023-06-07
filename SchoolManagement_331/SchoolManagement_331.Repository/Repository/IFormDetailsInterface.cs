@@ -12,6 +12,7 @@ namespace SchoolManagement_331.Repository.Repository
     {
         bool AddFormDetails(FormDetailsCustomeModel formDetailsCustome, int? id);
         Form_Data GetUserById(int? id);
+        //List<FormDetailsCustomeModel> GetUsers();
         List<Form_Data> GetUsers();
         int DeleteUser(int? id);
     }

@@ -34,6 +34,10 @@
 <div class="container_b">
     <div class="table_bg">
         <div class="main colortext">
+            @if (TempData["Error"] != null)
+            {
+                <h4 class="text-danger">@TempData["Error"]</h4>
+            }
             <table class="table DataTable colortext">
                 <thead>
                     <tr class="colortext">

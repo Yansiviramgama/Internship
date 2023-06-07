@@ -26,7 +26,7 @@
     }
 
     .dataTables_wrapper {
-        padding: 30px;
+        padding: 10px;
     }
 </style>
 <h2 class="colortext text-center">ShowStudent</h2>
@@ -60,6 +60,7 @@
                             <td>@i.Country.CountryName</td>
                             <td>
                                 <a href="/Student/DetailsForm/@i.UserID" class="btn btn-info"> Edit </a>
+                                <a href="/Student/StudentDetail/@i.UserID" class="btn btn-success"> Details </a>
                                 <a href="/Student/DeleteStudent/@i.UserID" class="btn btn-danger"> Delete </a>
                             </td>
 

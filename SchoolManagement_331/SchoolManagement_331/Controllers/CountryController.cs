@@ -53,10 +53,15 @@ namespace SchoolManagement_331.Controllers
         }
         public ActionResult ShowCountry()
         {
-
-           
-
+            try
+            {
                 return View(CountryServices.GetCountries());
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             
         }
         public ActionResult DeleteCountry(int? id)
@@ -64,8 +69,13 @@ namespace SchoolManagement_331.Controllers
 
             try
             {
+                var countryid = CountryServices.DeleteCountry(id);
+                if (countryid == 0)
+                {
+                    TempData["Error"] = "Country is In Use, You Can't Delete It!.......";
+                }
 
-                CountryServices.DeleteCountry(id);
+               
 
                 return RedirectToAction("ShowCountry");
             }

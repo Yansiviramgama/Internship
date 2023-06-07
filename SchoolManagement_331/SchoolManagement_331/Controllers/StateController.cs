@@ -95,7 +95,11 @@ namespace SchoolManagement_331.Controllers
         {
             try
             {
-                services.DeleteState(Id);
+                var state = services.DeleteState(Id);
+                if(state == 0)
+                {
+                    TempData["Error"] = "State is In Use, You Can't Delete It!.......";
+                }
                 return RedirectToAction("ShowState");
             }
             catch (Exception)

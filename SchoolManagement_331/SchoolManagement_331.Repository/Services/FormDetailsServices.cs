@@ -44,9 +44,9 @@ namespace SchoolManagement_331.Repository.Services
                         formDetailsCustome.BirthDate,
                         formDetailsCustome.Gender,
                         formDetailsCustome.Address,
-                        formDetailsCustome.CountryId,
-                        formDetailsCustome.StateId,
-                        formDetailsCustome.CityId,
+                         Convert.ToInt32(formDetailsCustome.Country),
+                       Convert.ToInt32(formDetailsCustome.State),
+                        Convert.ToInt32(formDetailsCustome.City),
                         formDetailsCustome.PostalCode);
                     return true;
                 }
@@ -70,6 +70,31 @@ namespace SchoolManagement_331.Repository.Services
             return userid;
         }
 
+        //public List<FormDetailsCustomeModel> GetUsers()
+        //{
+
+        //    //var listofuser = db.Form_Data.ToList();
+        //    var query = (from s in db.Form_Data
+        //                join cn in db.Country on s.UserCountry equals cn.CountryID
+        //                join st in db.State on s.UserState equals st.StateID
+        //                join ct in db.City on s.UserCity equals ct.CityID
+        //                select new FormDetailsCustomeModel
+        //                {
+        //                    UserID = s.UserID,
+        //                    FirstName = s.FirstName,
+        //                    LastName = s.LastName,
+        //                    Email = s.Email,
+        //                    ContactNumber = s.ContactNumber,
+        //                    BirthDate = s.BirthDate,
+        //                    Gender = s.Gender,
+        //                    Address = s.ADDRESS,
+        //                    Country = cn.CountryName,
+        //                    State = st.StateName,
+        //                    City = ct.CityName,
+        //                    PostalCode = (int)s.PostalCode
+        //                }).ToList();
+        //    return query;
+        //}
         public List<Form_Data> GetUsers()
         {
             var listofuser = db.Form_Data.ToList();

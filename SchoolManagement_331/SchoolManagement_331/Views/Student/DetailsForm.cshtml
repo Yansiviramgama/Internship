@@ -51,7 +51,8 @@
                 </div>
                 <div class="input-box">
                     <label class="colortext">Birth Date</label>
-                    @Html.TextBoxFor(x => x.BirthDate, "", new { @class = "input", @type = "date" })
+                    <input type="date" value="@ViewBag.Date" name="BirthDate" class="input"  />
+                    @*@Html.TextBoxFor(x => x.BirthDate, "", new { @class = "input", @type = "date" })*@
                     @Html.ValidationMessageFor(x => x.BirthDate, "", new { @class = "text-danger" })
 
                 </div>
@@ -82,12 +83,12 @@
                     <input type="text" placeholder="Enter street address line 2" required />*@
                 <div class="column">
                     @Html.DropDownListFor(x => x.Country, ViewBag.CountryList as SelectList, "--Select Country--", new { @class = "select-box select" })
-                    @Html.DropDownListFor(x => x.State, new SelectList(""), "--Select State--", new { @class = "select-box select" })
+                    @Html.DropDownListFor(x => x.State, ViewBag.StateList as SelectList, "--Select State--", new { @class = "select-box select" })
 
 
                 </div>
                 <div class="column">
-                    @Html.DropDownListFor(x => x.City, new SelectList(""), "--Select City--", new { @class = "select-box select" })
+                    @Html.DropDownListFor(x => x.City, ViewBag.CityList as SelectList, "--Select City--", new { @class = "select-box select" })
                     @Html.TextBoxFor(x => x.PostalCode, new { @class = "input", type = "number", placeholder = "Enter postal code", name = "PostalCode" })
 
                 </div>

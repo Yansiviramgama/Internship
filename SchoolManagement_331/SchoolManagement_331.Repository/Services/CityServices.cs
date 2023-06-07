@@ -53,5 +53,11 @@ namespace SchoolManagement_331.Repository.Services
             var citybyId = db.City.Where(x => x.CityID == id).FirstOrDefault();
             return citybyId;
         }
+
+        public List<City> GetCityByState(int? id)
+        {
+            var city = db.City.Where(x => x.StateID == id).ToList();
+            return city;
+        }
     }
 }

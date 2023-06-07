@@ -32,13 +32,18 @@ namespace SchoolManagement_331.Controllers
             if(id == null)
             {
                 ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                ViewBag.StateList = new SelectList("");
+                ViewBag.CityList = new SelectList("");
                 return View();
             }
             else
             {
                 ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-               
                 Form_Data data = formDetails.GetUserById(id);
+                ViewBag.Date = data.BirthDate.ToString("yyyy-MM-dd");
+                ViewBag.StateList = new SelectList(stateServices.GetStatesbyCountry(data.UserCountry),"StateID","StateName");
+                ViewBag.CityList = new SelectList(CityServices.GetCityByState(data.UserState), "CityID", "CityName"); ;
+               
                 FormDetailsCustomeModel model = Helper.BindFormDataToCustomeFormData(data);
                 return View(model);
             }
@@ -75,6 +80,12 @@ namespace SchoolManagement_331.Controllers
             formDetails.GetUserById(Id);
             return RedirectToAction("ShowStudent", "Student");
 
+        }
+        public ActionResult StudentDetail(int ? id)
+        {
+            formDetails.GetUsers();
+            var details = formDetails.GetUserById(id);
+            return View(details);
         }
         public JsonResult GetStates(int id)
         {

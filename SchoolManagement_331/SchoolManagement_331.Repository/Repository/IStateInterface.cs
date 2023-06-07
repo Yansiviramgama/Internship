@@ -14,5 +14,6 @@ namespace SchoolManagement_331.Repository.Repository
         State GetStateById(int? id);
         List<State> GetStates();
         int DeleteState(int? id);
+        List<State> GetStatesbyCountry(int? id);
     }
 }

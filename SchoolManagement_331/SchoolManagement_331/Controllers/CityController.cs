@@ -104,7 +104,11 @@ namespace SchoolManagement_331.Controllers
 
             try
             {
-                services.DeleteCity(id);
+               var cities = services.DeleteCity(id);
+                if(cities == 0)
+                {
+                    TempData["Error"] = "City is In Use, You Can't Delete It!.......";
+                }
                 return RedirectToAction("ShowCity");
             }
             catch (Exception)

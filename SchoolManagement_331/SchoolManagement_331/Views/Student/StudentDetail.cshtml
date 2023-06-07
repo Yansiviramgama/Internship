@@ -1,0 +1,78 @@
+﻿@model SchoolManagement_331.Models.Context.Form_Data
+@{
+    ViewBag.Title = "StudentDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .container_b {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .table_bg {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        background-color: black;
+        /*box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;*/
+        /*box-shadow: 0 0 15px #888888;*/
+        /*background-color*/
+    }
+
+    .main {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    
+</style>
+<h2 class="colortext text-center">ShowStudent Details</h2>
+
+<div class="container_b">
+    <div class="table_bg">
+        <div class="main colortext">           
+            <table class="table colortext">
+                <thead>
+                    <tr class="colortext">
+                        <th>First Name </th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Contact Number</th>
+                        <th>Birth Date</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>City Name</th>
+                        <th>State Name</th>
+                        <th>Country Name</th>
+                        <th>Postal code</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="colortext">
+                        <td>@Model.FirstName</td>
+                        <td>@Model.LastName</td>
+                        <td>@Model.Email</td>
+                        <td>@Model.ContactNumber</td>
+                        <td>@Model.BirthDate</td>
+                        <td>@Model.Gender</td>
+                        <td>@Model.ADDRESS</td>
+                        <td>@Model.City.CityName</td>
+                        <td>@Model.State.StateName</td>
+                        <td>@Model.Country.CountryName</td>
+                        <td>@Model.PostalCode</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+

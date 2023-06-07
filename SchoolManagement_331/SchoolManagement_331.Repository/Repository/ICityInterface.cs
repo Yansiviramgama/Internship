@@ -14,5 +14,6 @@ namespace SchoolManagement_331.Repository.Repository
         City GetCityById(int? id);
         List<City> GetCities();
         int DeleteCity(int? id);
+        List<City> GetCityByState(int? id);
     }
 }

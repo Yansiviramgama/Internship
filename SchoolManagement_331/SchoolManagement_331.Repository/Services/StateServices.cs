@@ -61,5 +61,11 @@ namespace SchoolManagement_331.Repository.Services
         {
             return db.State.ToList();
         }
+
+        public List<State> GetStatesbyCountry(int? id)
+        {
+            var state = db.State.Where(x => x.CountryID == id).ToList();
+            return state;
+        }
     }
 }

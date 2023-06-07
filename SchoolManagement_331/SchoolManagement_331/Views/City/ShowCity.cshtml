@@ -35,6 +35,10 @@
 <div class="container_b">
     <div class="table_bg">
         <div class="main colortext">
+            @if (TempData["Error"] != null)
+            {
+                <h4 class="text-danger">@TempData["Error"]</h4>
+            }
             <table class="table DataTable colortext">
                 <thead>
                     <tr class="colortext">
@@ -58,26 +62,26 @@
                 <tbody>
                     @foreach (var i in Model)
                     {
-                    <tr class="colortext">
-                        <td>
-                            @i.CityID
-                        </td>
-                        <td>
-                            @i.CityName
-                        </td>
-                        <td>
-                            @i.State.StateName
-                        </td>
-                        <td>
-                            @i.Country.CountryName
-                        </td>
-                        <td>
-                            <a href="/City/AddCity/@i.CityID" class="btn btn-info"> Edit </a>
+                        <tr class="colortext">
+                            <td>
+                                @i.CityID
+                            </td>
+                            <td>
+                                @i.CityName
+                            </td>
+                            <td>
+                                @i.State.StateName
+                            </td>
+                            <td>
+                                @i.Country.CountryName
+                            </td>
+                            <td>
+                                <a href="/City/AddCity/@i.CityID" class="btn btn-info"> Edit </a>
 
-                            <a href="/City/DeleteCity/@i.CityID" class="btn btn-danger"> Delete </a>
+                                <a href="/City/DeleteCity/@i.CityID" class="btn btn-danger"> Delete </a>
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
                     }
                 </tbody>
 
