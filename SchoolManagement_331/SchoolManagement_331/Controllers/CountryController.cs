@@ -2,6 +2,7 @@
 using SchoolManagement_331.Models.Context;
 using SchoolManagement_331.Models.CustomModels;
 using SchoolManagement_331.Repository.Repository;
+using SchoolManagement_331.SessionHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ using System.Web.Mvc;
 
 namespace SchoolManagement_331.Controllers
 {
+   // [Authorize]
+   [Validate]
     public class CountryController : Controller
     {
         SchoolManagement_YV331Entities db = new SchoolManagement_YV331Entities();
@@ -23,31 +26,51 @@ namespace SchoolManagement_331.Controllers
         // GET: Country
         public ActionResult AddCountry(int ? id)
         {
-            if(id == 0){
-                return View();
-            }
-            else
+            try
             {
-                Country country = CountryServices.GetCountryById(id);
-                CountryCustomModel countryCustom = Hepler.BindCountryToCustomeCountry(country);
-                return View(countryCustom);
+                if (id == null)
+                {
+                    return View();
+                }
+                else
+                {
+                    Country country = CountryServices.GetCountryById(id);
+                    CountryCustomModel countryCustom = Hepler.BindCountryToCustomeCountry(country);
+                    return View(countryCustom);
+                }
+
             }
-           
+            catch (Exception)
+            {
+
+                return RedirectToAction("Error", "Home");
+            }
 
         }
         [HttpPost]
         public ActionResult AddCountry(int ? id, CountryCustomModel country)
         {
-            if (id == null)
+            try
             {
-                CountryServices.AddCountry(country, 0);
-                
-                return RedirectToAction("ShowCountry", "Country");
+
+                if (id == null)
+                {
+                   
+                        CountryServices.AddCountry(country, 0);
+
+                        return RedirectToAction("ShowCountry", "Country");
+                   
+                }
+                else
+                {
+                    CountryServices.AddCountry(country, id);
+                    return RedirectToAction("ShowCountry", "Country");
+                }
             }
-            else
+            catch (Exception)
             {
-                CountryServices.AddCountry(country, id);
-                return RedirectToAction("ShowCountry", "Country");
+
+                return RedirectToAction("Error", "Home");
             }
 
         }
@@ -57,16 +80,15 @@ namespace SchoolManagement_331.Controllers
             {
                 return View(CountryServices.GetCountries());
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
-                throw e;
+                return RedirectToAction("Error", "Home");
             }
             
         }
         public ActionResult DeleteCountry(int? id)
         {
-
             try
             {
                 var countryid = CountryServices.DeleteCountry(id);
@@ -74,20 +96,14 @@ namespace SchoolManagement_331.Controllers
                 {
                     TempData["Error"] = "Country is In Use, You Can't Delete It!.......";
                 }
-
-               
-
                 return RedirectToAction("ShowCountry");
             }
             catch (Exception)
             {
 
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
-
-
-
-        }
+       }
 
     }
 }

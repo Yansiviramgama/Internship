@@ -40,7 +40,7 @@
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
                             <label class="mdl-textfield__label" for="Role">User Role</label>
-                            @Html.DropDownListFor(X => X.Role,EnumHelper.GetSelectList(typeof(RoleType)) ,"",new { @class = "mdl-textfield__input", id = "Role" })
+                            @Html.DropDownListFor(X => X.Role, EnumHelper.GetSelectList(typeof(RoleType)), "", new { @class = "mdl-textfield__input", id = "Role" })
                             @Html.ValidationMessageFor(x => x.Role, "", new { @class = "text-danger" })
                         </div>
 

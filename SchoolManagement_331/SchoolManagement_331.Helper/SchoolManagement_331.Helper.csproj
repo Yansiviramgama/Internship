@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CityHelper\CityHelper.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CountryHelper\CountryHelper.cs" />
     <Compile Include="FormDetailsHelper\FormDetailsHelper.cs" />
     <Compile Include="GlobalEnum\RoleEnum.cs" />

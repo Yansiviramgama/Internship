@@ -71,6 +71,11 @@
     <FunctionImport Name="Sp_Delete_Data">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="ImageTable" EntityType="SchoolManagement_YV331Model.ImageTable" />
+    <AssociationSet Name="FK__ImageTabl__UserI__4E88ABD4" Association="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4">
+      <End Role="User" EntitySet="User" />
+      <End Role="ImageTable" EntitySet="ImageTable" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="City">
     <Key>
@@ -134,6 +139,7 @@
     <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="User_Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="User_Role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ImageTable" Relationship="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" FromRole="User" ToRole="ImageTable" />
   </EntityType>
   <Association Name="FK__City__CountryID__2C3393D0">
     <End Type="SchoolManagement_YV331Model.Country" Role="Country" Multiplicity="1" />
@@ -204,6 +210,28 @@
       </Principal>
       <Dependent Role="Form_Data">
         <PropertyRef Name="UserState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ImageTable">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" FromRole="ImageTable" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__ImageTabl__UserI__4E88ABD4">
+    <End Type="SchoolManagement_YV331Model.User" Role="User" Multiplicity="1" />
+    <End Type="SchoolManagement_YV331Model.ImageTable" Role="ImageTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ImageTable">
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

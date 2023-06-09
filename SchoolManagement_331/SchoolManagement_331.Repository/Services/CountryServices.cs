@@ -25,8 +25,16 @@ namespace SchoolManagement_331.Repository.Services
                 {
                     if (id == 0)
                     {
-                        db.Sp_AddEdit_Country(0, Country.CountryName);
-                        return true;
+                        var countryData = db.Country.Any(x => x.CountryName.ToLower() == Country.CountryName.ToLower());
+                        if (countryData == false)
+                        {
+                            db.Sp_AddEdit_Country(0, Country.CountryName);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                     else
                     {
@@ -40,26 +48,46 @@ namespace SchoolManagement_331.Repository.Services
                     return false;
                 }
             }
-            catch (Exception e)
+            catch 
             {
-                throw e;
+                return false;
             }
         }
 
         public int DeleteCountry(int? id)
         {
-           return db.Sp_Delete_Country(id);
+            try
+            {
+                return db.Sp_Delete_Country(id);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
 
         public List<Country> GetCountries()
         {
-           return db.Country.ToList();
+            try
+            {
+                return db.Country.ToList();
+            }
+            catch 
+            {
+                return null;
+            }
         }
 
         public Country GetCountryById(int ? id)
         {
-
-           return db.Country.Where(x => x.CountryID == id).FirstOrDefault();
+            try
+            {
+                return db.Country.Where(x => x.CountryID == id).FirstOrDefault();
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

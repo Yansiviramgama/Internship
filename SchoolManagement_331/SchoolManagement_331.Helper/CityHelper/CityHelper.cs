@@ -12,34 +12,39 @@ namespace SchoolManagement_331.Helper.CityHelper
     {
         public City BindCustomeCityToCity(CityCustomeModel city)
         {
-
-
-            City Citymodel = new City()
+            try
             {
-                CityID = city.CityID,
-                CityName = city.CityName,
-                StateID = city.StateID,
-                CountryID = city.CountryID
-
-
-            };
-            return Citymodel;
-
+                City Citymodel = new City()
+                {
+                    CityID = city.CityID,
+                    CityName = city.CityName,
+                    StateID = city.StateID,
+                    CountryID = city.CountryID
+                };
+                return Citymodel;
+            }
+            catch
+            {
+                return null;
+            }
         }
         public CityCustomeModel BindCityToCustomeCity(City city)
         {
-
-            CityCustomeModel model = new CityCustomeModel()
+            try
             {
-                CityID = city.CityID,
-                CityName = city.CityName,
-                StateID = city.StateID,
-                CountryID = city.CountryID
-            };
-
-
-            return model;
-
+                CityCustomeModel model = new CityCustomeModel()
+                {
+                    CityID = city.CityID,
+                    CityName = city.CityName,
+                    StateID = city.StateID,
+                    CountryID = city.CountryID
+                };
+                return model;
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

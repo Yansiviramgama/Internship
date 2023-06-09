@@ -13,21 +13,53 @@ namespace SchoolManagement_331.Helper.SignUpHelper
     {
         public static User BindCustomesignUpToSignUp(SignUpCustomModel Signup)
         {
-            User user = new User()
+            try
             {
-                User_Name = Signup.Name,
-                User_Email = Signup.Email,
-                User_Password = Signup.Password,
-                User_Role = Signup.Role,
-            };
-            return user;
-
-
+                User user = new User()
+                {
+                    UserID = Signup.UserId,
+                    User_Name = Signup.Name,
+                    User_Email = Signup.Email,
+                    User_Password = Signup.Password,
+                    User_Role = Signup.Role,
+                };
+                return user;
+            }
+            catch 
+            {
+                return null;
+            }
         }
-      
+        public static SignUpCustomModel BindsignUpToCustomeSignUp(User user )
+        {
+            try
+            {
+                SignUpCustomModel Signup = new SignUpCustomModel()
+                {
+                    Name = user.User_Name,
+                    Email = user.User_Email,
+                    Password = user.User_Password,
+                    Role = user.User_Role,
+                    UserId = user.UserID
+                };
+                return Signup;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public static string getEnumString(int Role)
         {
-            return Enum.GetName(typeof(RoleType), Role);
+            try
+            {
+                return Enum.GetName(typeof(RoleType), Role);
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

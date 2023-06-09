@@ -1,0 +1,78 @@
+﻿@model SchoolManagement_331.Models.CustomModels.SignUpCustomModel
+@using SchoolManagement_331.Helper.GlobalEnum
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form in HTML CSS</title>
+    <!---Custom CSS File--->
+    <link href="/Content/mainstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-4 p-5">
+        <header class="colortext">User Profile</header>
+
+        @using (Html.BeginForm("EditProfile", "UserProfile", FormMethod.Post, new {@class= "form", enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
+            <div class="column">
+                <div class="input-box">
+                    <label class="colortext">Name</label>
+                    @Html.TextBoxFor(x => x.Name, "", new { @class = "input", id = "name" })
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label class="colortext">Email Address</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "input", id = "e-mail" })
+                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label class="colortext">Password</label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "input", id = "password", type = "Password" })
+                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="gender-box">
+
+                <div class="gender-option">
+                    <div class="gender">
+                        <label class="colortext">User Role</label>
+                        @Html.DropDownListFor(X => X.Role, EnumHelper.GetSelectList(typeof(RoleType)), "", new { @class = "select-box select", id = "Role" })
+                        @Html.ValidationMessageFor(x => x.Role, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+            <div class="input-box address">
+                <label class="colortext">ImageTitle</label>
+
+                <div class="column">
+                    @Html.EditorFor(model => model.ImageTitle, new { htmlAttributes = new { @class = "input" } })
+                    @Html.ValidationMessageFor(model => model.ImageTitle, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    <input type="file" name="IMAGEPATH" id="IMAGEPATH" class="input" required />
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+
+        }
+
+
+    </div>
+</body>
+</html>

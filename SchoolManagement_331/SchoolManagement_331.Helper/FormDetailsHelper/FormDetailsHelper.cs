@@ -12,44 +12,59 @@ namespace SchoolManagement_331.Helper.FormDetailsHelper
     {
         public Form_Data BindCustomeFormDataToFormData(FormDetailsCustomeModel customeModel)
         {
-            Form_Data form = new Form_Data()
+            try
             {
-                UserID = customeModel.UserID,
-                FirstName = customeModel.FirstName,
-                LastName = customeModel.LastName,
-                Email = customeModel.Email,
-                ContactNumber = customeModel.ContactNumber,
-                Gender = customeModel.Gender,
-                BirthDate = customeModel.BirthDate,
-                ADDRESS = customeModel.Address,
-                UserCountry = Convert.ToInt32(customeModel.Country),
-                UserState = Convert.ToInt32(customeModel.State),
-                UserCity = Convert.ToInt32(customeModel.City),
-                PostalCode = customeModel.PostalCode
 
-            };
-            return form;
+                Form_Data form = new Form_Data()
+                {
+                    UserID = customeModel.UserID,
+                    FirstName = customeModel.FirstName,
+                    LastName = customeModel.LastName,
+                    Email = customeModel.Email,
+                    ContactNumber = customeModel.ContactNumber,
+                    Gender = customeModel.Gender,
+                    BirthDate = customeModel.BirthDate,
+                    ADDRESS = customeModel.Address,
+                    UserCountry = Convert.ToInt32(customeModel.Country),
+                    UserState = Convert.ToInt32(customeModel.State),
+                    UserCity = Convert.ToInt32(customeModel.City),
+                    PostalCode = customeModel.PostalCode
+
+                };
+                return form;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public FormDetailsCustomeModel BindFormDataToCustomeFormData(Form_Data Model)
         {
-            FormDetailsCustomeModel form = new FormDetailsCustomeModel()
+            try
             {
-                UserID = Model.UserID,
-                FirstName = Model.FirstName,
-                LastName = Model.LastName,
-                Email = Model.Email,
-                ContactNumber = Model.ContactNumber,
-                Gender = Model.Gender,
-                BirthDate = (DateTime)Model.BirthDate,
-                Address = Model.ADDRESS,
-                CountryId= Model.UserCountry,
-                StateId = Model.UserState,
-                CityId = Model.UserCity,
-                PostalCode = (int)Model.PostalCode
+                FormDetailsCustomeModel form = new FormDetailsCustomeModel()
+                {
+                    UserID = Model.UserID,
+                    FirstName = Model.FirstName,
+                    LastName = Model.LastName,
+                    Email = Model.Email,
+                    ContactNumber = Model.ContactNumber,
+                    Gender = Model.Gender,
+                    BirthDate = (DateTime)Model.BirthDate,
+                    Address = Model.ADDRESS,
+                    CountryId = Model.UserCountry,
+                    StateId = Model.UserState,
+                    CityId = Model.UserCity,
+                    PostalCode = (int)Model.PostalCode
 
-            };
-            return form;
+                };
+                return form;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@using SchoolManagement_331.SessionHelper
+<!doctype html>
 <!--
   Material Design Lite
   Copyright 2015 Google Inc. All rights reserved.
@@ -206,19 +207,29 @@
                 </ul>
 
                 <div class="avatar-dropdown" id="icon">
-                    <span>Yansi</span>
-                    <img src="~/Content/images/1111.jpg" />
+                    <span>@SessionData.UserName</span>
+                    @if (SessionData.ImagePath != null)
+                    {
+                        <img src="~/Images/@SessionData.ImagePath" />
+                    }
+                    else
+
+                    {
+                        <img src="~/Images/888-8880154_8-pro-tips-to-get-more-out-of.png" />
+                    }
+
                 </div>
                 <!-- Account dropdawn-->
                 <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
                     for="icon">
                     <li class="mdl-list__item mdl-list__item--two-line">
                         <span class="mdl-list__item-primary-content">
-                            <span class="material-icons mdl-list__item-avatar"></span>
-                            <span>Yansi</span>
-                            <span class="mdl-list__item-sub-title">Yansi@skywalker.com</span>
+                            <span class="material-icons"></span>
+                            <span>@SessionData.UserName</span>
+                            <span class="mdl-list__item-sub-title">@SessionData.UserEmail</span>
                         </span>
                     </li>
+                    <a href="/UserProfile/AccountDetails">
                     <li class="list__item--border-top"></li>
                     <li class="mdl-menu__item mdl-list__item">
                         <span class="mdl-list__item-primary-content">
@@ -295,7 +306,7 @@
                                     <i class="material-icons">keyboard_arrow_down</i>
                                 </a>
                                 <div class="mdl-navigation">
-                                    <a class="mdl-navigation__link" href="/Student/AddStudent">
+                                    <a class="mdl-navigation__link" href="/Student/DetailsForm">
                                         Add Student
                                     </a>
                                     <a class="mdl-navigation__link" href="/Student/ShowStudent">
@@ -367,12 +378,12 @@
                                     <a class="mdl-navigation__link" href="/Login/ForgotPassword">
                                         Forgot password
                                     </a>
-                                    <a class="mdl-navigation__link" href="/Error/Error">
-                                        404
+                                    <a class="mdl-navigation__link" href="/Home/Error">
+                                        Error Page
                                     </a>
                                 </div>
                             </div>
-                            <a class="mdl-navigation__link" href="forms.html">
+                            <a class="mdl-navigation__link" href="/UserProfile/AccountDetails">
                                 <i class="material-icons" role="presentation">person</i>
                                 Account
                             </a>

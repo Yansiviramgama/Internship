@@ -1,0 +1,67 @@
+﻿
+@using SchoolManagement_331.SessionHelper
+@{
+    ViewBag.Title = "AccountDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form in HTML CSS</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="/Content/AddStudent.css" />
+</head>
+<body>
+
+    <div class="container mt-4 p-5">
+        <header class="colortext">User Profile</header>
+        <div class="text-center">
+            <div class="column mt-3">
+                <img src="~/Images/@SessionData.ImagePath" />
+            </div>
+            <div class="column mt-3">
+                <div class="input-box colortext">
+                    UserID :  @SessionData.UserID
+                </div>
+            </div>
+            <div class="column mt-3">
+                <div class="input-box colortext">
+                    UserName :  @SessionData.UserName
+                </div>
+            </div>
+            <div class="column mt-3">
+                <div class="input-box colortext">
+                    UserEmail :  @SessionData.UserEmail
+                </div>
+            </div>
+            <div class="column mt-3">
+                <div class="input-box colortext">
+                    UserPassword :  @SessionData.UserPassword
+                </div>
+            </div>
+            <div class="column mt-3">
+                <div class="input-box colortext">
+                    UserRole :  @SessionData.UserRole
+                </div>
+            </div>
+
+                <div class="column mt-3">
+                    <div class="input-box colortext">
+                        <a href="/UserProfile/EditProfile" type="button" class="btn btn-primary">Edit Profile</a>
+                    </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+

@@ -39,33 +39,58 @@ namespace SchoolManagement_331.Repository.Services
                     return false;
                 }
             }
-            catch (Exception e)
+            catch 
             {
-                throw e;
+                return false;
             }
         }
 
         public int DeleteState(int? id)
         {
-            return db.Sp_Delete_State(id);
-        }
-     
-
-        
+            try
+            {
+                return db.Sp_Delete_State(id);
+            }
+            catch 
+            {
+                return -1;
+            }
+        }           
         public State GetStateById(int? id)
         {
-            return db.State.Where(x => x.StateID == id).FirstOrDefault();
+            try
+            {
+                return db.State.Where(x => x.StateID == id).FirstOrDefault();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public List<State> GetStates()
         {
-            return db.State.ToList();
+            try
+            {
+                return db.State.ToList();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public List<State> GetStatesbyCountry(int? id)
         {
-            var state = db.State.Where(x => x.CountryID == id).ToList();
-            return state;
+            try
+            {
+                var state = db.State.Where(x => x.CountryID == id).ToList();
+                return state;
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

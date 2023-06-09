@@ -4,6 +4,7 @@ using SchoolManagement_331.Models.Context;
 using SchoolManagement_331.Models.CustomModels;
 using SchoolManagement_331.Repository.Repository;
 using SchoolManagement_331.Repository.Services;
+using SchoolManagement_331.SessionHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ using System.Web.Mvc;
 
 namespace SchoolManagement_331.Controllers
 {
+   // [Authorize]
+    [Validate]
     public class CityController : Controller
     {
         SchoolManagement_YV331Entities db = new SchoolManagement_YV331Entities();
@@ -52,7 +55,7 @@ namespace SchoolManagement_331.Controllers
             catch (Exception)
             {
 
-                return View("Error");
+                return RedirectToAction("Error","Home");
             }
 
         }
@@ -81,7 +84,7 @@ namespace SchoolManagement_331.Controllers
             catch (Exception)
             {
 
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
 
         }
@@ -96,7 +99,7 @@ namespace SchoolManagement_331.Controllers
             catch (Exception)
             {
 
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
         }
         public ActionResult DeleteCity(int? id)
@@ -114,7 +117,7 @@ namespace SchoolManagement_331.Controllers
             catch (Exception)
             {
 
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
 
 

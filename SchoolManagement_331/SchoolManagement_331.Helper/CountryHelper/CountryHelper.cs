@@ -12,29 +12,35 @@ namespace SchoolManagement_331.Helper.CountryHelper
     {
         public Country BindCustomeCountryToCountry(CountryCustomModel Country)
         {
-
-            
-            Country Countrymodel = new Country()
+            try
             {
-                CountryID = Country.CountryID,
-                CountryName = Country.CountryName
-
-
-            };
-            return Countrymodel;
-
+                Country Countrymodel = new Country()
+                {
+                    CountryID = Country.CountryID,
+                    CountryName = Country.CountryName
+                };
+                return Countrymodel;
+            }
+            catch 
+            {
+                return null;
+            }
         }
         public CountryCustomModel BindCountryToCustomeCountry(Country country)
         {
-
-            CountryCustomModel model = new CountryCustomModel()
+            try
             {
-                CountryID = country.CountryID,
-                CountryName = country.CountryName
-            };
-            
-           
-            return model;
+                CountryCustomModel model = new CountryCustomModel()
+                {
+                    CountryID = country.CountryID,
+                    CountryName = country.CountryName
+                };
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
 
         }
     }

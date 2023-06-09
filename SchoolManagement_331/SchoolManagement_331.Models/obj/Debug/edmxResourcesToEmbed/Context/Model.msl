@@ -65,5 +65,15 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="Sp_AddEdit_Data" FunctionName="SchoolManagement_YV331Model.Store.Sp_AddEdit_Data" />
     <FunctionImportMapping FunctionImportName="Sp_Delete_Data" FunctionName="SchoolManagement_YV331Model.Store.Sp_Delete_Data" />
+    <EntitySetMapping Name="ImageTable">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.ImageTable">
+        <MappingFragment StoreEntitySet="ImageTable">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="ImageTitle" ColumnName="ImageTitle" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

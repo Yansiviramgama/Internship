@@ -3,6 +3,7 @@ using SchoolManagement_331.Helper.FormDetailsHelper;
 using SchoolManagement_331.Models.Context;
 using SchoolManagement_331.Models.CustomModels;
 using SchoolManagement_331.Repository.Repository;
+using SchoolManagement_331.SessionHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ using System.Web.Mvc;
 
 namespace SchoolManagement_331.Controllers
 {
+    //[Authorize]
+    [Validate]
     public class StudentController : Controller
     {
         SchoolManagement_YV331Entities db = new SchoolManagement_YV331Entities();
@@ -29,69 +32,100 @@ namespace SchoolManagement_331.Controllers
         // GET: Student
         public ActionResult DetailsForm(int ? id)
         {
-            if(id == null)
+            try
             {
-                ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                ViewBag.StateList = new SelectList("");
-                ViewBag.CityList = new SelectList("");
-                return View();
+                if (id == null)
+                {
+                    ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                    ViewBag.StateList = new SelectList("");
+                    ViewBag.CityList = new SelectList("");
+                    return View();
+                }
+                else
+                {
+                    ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                    Form_Data data = formDetails.GetUserById(id);
+                    ViewBag.Date = data.BirthDate.ToString("yyyy-MM-dd");
+                    ViewBag.StateList = new SelectList(stateServices.GetStatesbyCountry(data.UserCountry), "StateID", "StateName");
+                    ViewBag.CityList = new SelectList(CityServices.GetCityByState(data.UserState), "CityID", "CityName"); ;
+
+                    FormDetailsCustomeModel model = Helper.BindFormDataToCustomeFormData(data);
+                    return View(model);
+                }
             }
-            else
+            catch (Exception)
             {
-                ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                Form_Data data = formDetails.GetUserById(id);
-                ViewBag.Date = data.BirthDate.ToString("yyyy-MM-dd");
-                ViewBag.StateList = new SelectList(stateServices.GetStatesbyCountry(data.UserCountry),"StateID","StateName");
-                ViewBag.CityList = new SelectList(CityServices.GetCityByState(data.UserState), "CityID", "CityName"); ;
-               
-                FormDetailsCustomeModel model = Helper.BindFormDataToCustomeFormData(data);
-                return View(model);
+                return RedirectToAction("Error", "Home");
             }
             
         }
       
-
         [HttpPost]
         public ActionResult DetailsForm(int ? Id,FormDetailsCustomeModel customeModel)
         {
-            if(Id == null)
+            try
             {
-                ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                formDetails.AddFormDetails(customeModel, null);
-                return RedirectToAction("ShowStudent", "Student");
-            }
-            else
-            {
-                ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                formDetails.AddFormDetails(customeModel, Id);
-                return RedirectToAction("ShowStudent", "Student");
-            }
+                if (Id == null)
+                {
+                    ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                    formDetails.AddFormDetails(customeModel, null);
+                    return RedirectToAction("ShowStudent", "Student");
+                }
+                else
+                {
+                    ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                    formDetails.AddFormDetails(customeModel, Id);
+                    return RedirectToAction("ShowStudent", "Student");
+                }
 
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
         public ActionResult ShowStudent()
         {
-            
-            return View(formDetails.GetUsers());
+            try
+            {
+                return View(formDetails.GetUsers());
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
    
         public ActionResult DeleteStudent(int ? Id)
         {
-
-            formDetails.GetUserById(Id);
-            return RedirectToAction("ShowStudent", "Student");
+            try
+            {
+                formDetails.GetUserById(Id);
+                return RedirectToAction("ShowStudent", "Student");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error", "Home");
+            }
 
         }
         public ActionResult StudentDetail(int ? id)
         {
-            formDetails.GetUsers();
-            var details = formDetails.GetUserById(id);
-            return View(details);
+            try
+            {
+                formDetails.GetUsers();
+                var details = formDetails.GetUserById(id);
+                return View(details);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
         public JsonResult GetStates(int id)
         {
             try
-            {
-                
+            {               
                 db.Configuration.ProxyCreationEnabled = false;
                 List<State> data = db.State.Where(x => x.CountryID == id).ToList();
                 var jsonString = JsonConvert.SerializeObject(data);
@@ -106,8 +140,7 @@ namespace SchoolManagement_331.Controllers
         public JsonResult GetCity(int id)
         {
             try
-            {
-               
+            {              
                 db.Configuration.ProxyCreationEnabled = false;
                 List<City> data = db.City.Where(x => x.StateID == id).ToList();
                 var jsonString = JsonConvert.SerializeObject(data);
@@ -117,7 +150,6 @@ namespace SchoolManagement_331.Controllers
             {
                 throw e;
             }
-
         }
     }
 }

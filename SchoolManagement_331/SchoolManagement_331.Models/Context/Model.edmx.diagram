@@ -16,6 +16,8 @@
         <AssociationConnector Association="SchoolManagement_YV331Model.FK__Form_Data__UserC__300424B4" />
         <AssociationConnector Association="SchoolManagement_YV331Model.FK__State__CountryID__29572725" />
         <AssociationConnector Association="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.ImageTable" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

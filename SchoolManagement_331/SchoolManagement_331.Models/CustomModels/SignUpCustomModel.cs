@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace SchoolManagement_331.Models.CustomModels
 {
     public class SignUpCustomModel
     {
+        public int UserId { get; set; }
         [Required]
         [StringLength(20, MinimumLength = 2, ErrorMessage = "Customer Name Must Have Minimum 2 And Maximum 20 Character")]
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Digits are not allowed.")]
@@ -26,7 +28,12 @@ namespace SchoolManagement_331.Models.CustomModels
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter a valid e-mail adress")]
         public string Email { get; set; }
         [Required]
-        public int Role { get; set; }
+        public int Role { get; set; }   
+        [Required]
+        public string ImageTitle { get; set; }
+        [Required]
+        public string Image { get; set; }
+        public HttpPostedFileBase IMAGEPATH { get; set; }
 
     }
 }

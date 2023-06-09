@@ -16,21 +16,28 @@ namespace SchoolManagement_331.Repository.Services
         CityHelper Helper = new CityHelper();
         public bool AddCity(CityCustomeModel city, int? id)
         {
-            City main = Helper.BindCustomeCityToCity(city);
-            if (main != null)
+            try
             {
-                if (id == 0)
+                City main = Helper.BindCustomeCityToCity(city);
+                if (main != null)
                 {
-                    db.Sp_AddEdit_City(null, city.CityName, city.StateID, city.CountryID);
-                    return true;
+                    if (id == 0)
+                    {
+                        db.Sp_AddEdit_City(null, city.CityName, city.StateID, city.CountryID);
+                        return true;
+                    }
+                    else
+                    {
+                        db.Sp_AddEdit_City(city.CityID, city.CityName, city.StateID, city.CountryID);
+                        return true;
+                    }
                 }
                 else
                 {
-                    db.Sp_AddEdit_City(city.CityID, city.CityName, city.StateID, city.CountryID);
-                    return true;
+                    return false;
                 }
             }
-            else
+            catch
             {
                 return false;
             }
@@ -38,26 +45,54 @@ namespace SchoolManagement_331.Repository.Services
 
         public int DeleteCity(int ? id)
         {
-            var deletecity = db.Sp_Delete_City(id);
-           return deletecity;
+            try
+            {
+                var deletecity = db.Sp_Delete_City(id);
+                return deletecity;
+            }
+            catch 
+            {
+                return -1;
+            }
         }
 
         public List<City> GetCities()
         {
-            var getCity = db.City.ToList();
-            return getCity;
+            try
+            {
+                var getCity = db.City.ToList();
+                return getCity;
+            }
+            catch 
+            {
+                return null;
+            }
         }
 
         public City GetCityById(int? id)
         {
-            var citybyId = db.City.Where(x => x.CityID == id).FirstOrDefault();
-            return citybyId;
+            try
+            {
+                var citybyId = db.City.Where(x => x.CityID == id).FirstOrDefault();
+                return citybyId;
+            }
+            catch 
+            {
+                return null;
+            }
         }
 
         public List<City> GetCityByState(int? id)
         {
-            var city = db.City.Where(x => x.StateID == id).ToList();
-            return city;
+            try
+            {
+                var city = db.City.Where(x => x.StateID == id).ToList();
+                return city;
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

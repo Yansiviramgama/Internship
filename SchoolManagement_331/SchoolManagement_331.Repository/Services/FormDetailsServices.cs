@@ -16,89 +16,89 @@ namespace SchoolManagement_331.Repository.Services
         FormDetailsHelper Helper = new FormDetailsHelper();
         public bool AddFormDetails(FormDetailsCustomeModel formDetailsCustome, int? id)
         {
-            Form_Data main = Helper.BindCustomeFormDataToFormData(formDetailsCustome);
-            if(main != null)
+            try
             {
-                if(id == null)
+                Form_Data main = Helper.BindCustomeFormDataToFormData(formDetailsCustome);
+                if (main != null)
                 {
-                    db.Sp_AddEdit_Data(null,formDetailsCustome.FirstName,
-                        formDetailsCustome.LastName,
-                        formDetailsCustome.Email,
-                        formDetailsCustome.ContactNumber,
-                        formDetailsCustome.BirthDate,
-                        formDetailsCustome.Gender,
-                        formDetailsCustome.Address,
-                        Convert.ToInt32(formDetailsCustome.Country),
-                       Convert.ToInt32(formDetailsCustome.State),
-                        Convert.ToInt32(formDetailsCustome.City) ,
-                        formDetailsCustome.PostalCode);
-                    return true;
+                    if (id == null)
+                    {
+                        db.Sp_AddEdit_Data(null, formDetailsCustome.FirstName,
+                            formDetailsCustome.LastName,
+                            formDetailsCustome.Email,
+                            formDetailsCustome.ContactNumber,
+                            formDetailsCustome.BirthDate,
+                            formDetailsCustome.Gender,
+                            formDetailsCustome.Address,
+                            Convert.ToInt32(formDetailsCustome.Country),
+                           Convert.ToInt32(formDetailsCustome.State),
+                            Convert.ToInt32(formDetailsCustome.City),
+                            formDetailsCustome.PostalCode);
+                        return true;
+                    }
+                    else
+                    {
+                        db.Sp_AddEdit_Data(formDetailsCustome.UserID,
+                            formDetailsCustome.FirstName,
+                            formDetailsCustome.LastName,
+                            formDetailsCustome.Email,
+                            formDetailsCustome.ContactNumber,
+                            formDetailsCustome.BirthDate,
+                            formDetailsCustome.Gender,
+                            formDetailsCustome.Address,
+                             Convert.ToInt32(formDetailsCustome.Country),
+                           Convert.ToInt32(formDetailsCustome.State),
+                            Convert.ToInt32(formDetailsCustome.City),
+                            formDetailsCustome.PostalCode);
+                        return true;
+                    }
                 }
                 else
                 {
-                    db.Sp_AddEdit_Data(formDetailsCustome.UserID, 
-                        formDetailsCustome.FirstName,
-                        formDetailsCustome.LastName,
-                        formDetailsCustome.Email,
-                        formDetailsCustome.ContactNumber,
-                        formDetailsCustome.BirthDate,
-                        formDetailsCustome.Gender,
-                        formDetailsCustome.Address,
-                         Convert.ToInt32(formDetailsCustome.Country),
-                       Convert.ToInt32(formDetailsCustome.State),
-                        Convert.ToInt32(formDetailsCustome.City),
-                        formDetailsCustome.PostalCode);
-                    return true;
+                    return false;
                 }
             }
-            else
+            catch
             {
                 return false;
             }
-
         }
-
         public int DeleteUser(int? id)
         {
-           var deletedata =  db.Sp_Delete_Data(id);
-            return deletedata;
+            try
+            {
+                var deletedata = db.Sp_Delete_Data(id);
+                return deletedata;
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
         public Form_Data GetUserById(int? id)
         {
-            var userid = db.Form_Data.Where(x => x.UserID == id).FirstOrDefault();
-            return userid;
+            try
+            {
+                var userid = db.Form_Data.Where(x => x.UserID == id).FirstOrDefault();
+                return userid;
+            }
+            catch
+            {
+                return null;
+            }
         }
-
-        //public List<FormDetailsCustomeModel> GetUsers()
-        //{
-
-        //    //var listofuser = db.Form_Data.ToList();
-        //    var query = (from s in db.Form_Data
-        //                join cn in db.Country on s.UserCountry equals cn.CountryID
-        //                join st in db.State on s.UserState equals st.StateID
-        //                join ct in db.City on s.UserCity equals ct.CityID
-        //                select new FormDetailsCustomeModel
-        //                {
-        //                    UserID = s.UserID,
-        //                    FirstName = s.FirstName,
-        //                    LastName = s.LastName,
-        //                    Email = s.Email,
-        //                    ContactNumber = s.ContactNumber,
-        //                    BirthDate = s.BirthDate,
-        //                    Gender = s.Gender,
-        //                    Address = s.ADDRESS,
-        //                    Country = cn.CountryName,
-        //                    State = st.StateName,
-        //                    City = ct.CityName,
-        //                    PostalCode = (int)s.PostalCode
-        //                }).ToList();
-        //    return query;
-        //}
         public List<Form_Data> GetUsers()
         {
-            var listofuser = db.Form_Data.ToList();
-            return listofuser;
+            try
+            {
+                var listofuser = db.Form_Data.ToList();
+                return listofuser;
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

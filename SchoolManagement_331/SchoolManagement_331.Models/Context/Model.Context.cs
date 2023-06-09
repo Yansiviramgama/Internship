@@ -32,6 +32,7 @@ namespace SchoolManagement_331.Models.Context
         public virtual DbSet<Form_Data> Form_Data { get; set; }
         public virtual DbSet<State> State { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<ImageTable> ImageTable { get; set; }
     
         public virtual int Sp_Delete_Country(Nullable<int> iD)
         {

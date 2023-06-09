@@ -3,6 +3,7 @@ using SchoolManagement_331.Models.Context;
 using SchoolManagement_331.Models.CustomModels;
 using SchoolManagement_331.Repository.Repository;
 using SchoolManagement_331.Repository.Services;
+using SchoolManagement_331.SessionHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ using System.Web.Mvc;
 
 namespace SchoolManagement_331.Controllers
 {
+   // [Authorize]
+    [Validate]
     public class StateController : Controller
     {
 
@@ -40,14 +43,11 @@ namespace SchoolManagement_331.Controllers
                     State state = services.GetStateById(id);
                     StateCustomeModel stateCustome = Helper.BindStateToCustomeState(state);
                     return View(stateCustome);
-                }
-
-               
+                }               
             }
             catch (Exception)
             {
-
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
         }
         [HttpPost]
@@ -66,20 +66,15 @@ namespace SchoolManagement_331.Controllers
                 {
                     StateServices.AddState(State, id);
                     return RedirectToAction("ShowState", "State");
-                }
-
-               
+                }              
             }
             catch (Exception)
             {
-
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
-
         }
         public ActionResult ShowState()
         {
-
             try
             {
                 var States = services.GetStates();
@@ -87,8 +82,7 @@ namespace SchoolManagement_331.Controllers
             }
             catch (Exception)
             {
-
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
         }
         public ActionResult DeleteState(int? Id)
@@ -104,7 +98,7 @@ namespace SchoolManagement_331.Controllers
             }
             catch (Exception)
             {
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
         }
 

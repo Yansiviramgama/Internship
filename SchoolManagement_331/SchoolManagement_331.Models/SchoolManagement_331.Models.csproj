@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Form_Data.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\ImageTable.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Model.Context.cs">
@@ -84,6 +88,7 @@
     <Compile Include="CustomModels\CityCustomeModel.cs" />
     <Compile Include="CustomModels\CountryCustomModel.cs" />
     <Compile Include="CustomModels\FormDetailsCustomeModel.cs" />
+    <Compile Include="CustomModels\ImageCustomeModel.cs" />
     <Compile Include="CustomModels\LoginCustomModel.cs" />
     <Compile Include="CustomModels\SignUpCustomModel.cs" />
     <Compile Include="CustomModels\StateCustomeModel.cs" />

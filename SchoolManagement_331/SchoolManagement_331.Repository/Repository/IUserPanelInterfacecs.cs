@@ -12,8 +12,9 @@ namespace SchoolManagement_331.Repository.Repository
     {
         bool SignUp(SignUpCustomModel user);
 
-        bool Login(LoginCustomModel Login);
+        int Login(LoginCustomModel Login);
         User ForgotPassword(SignUpCustomModel customModel);
+        User getUserbyEmail(string email);
         
     }
 }

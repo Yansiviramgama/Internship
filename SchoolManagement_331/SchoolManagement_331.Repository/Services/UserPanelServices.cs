@@ -31,28 +31,45 @@ namespace SchoolManagement_331.Repository.Services
                     return false;
                 }
             }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-        public bool Login(LoginCustomModel Login)
-        {
-            var login = db.User.Any(x => x.User_Email == Login.Email && x.User_Password == Login.Password);
-            if (login)
-            {
-               
-                return true;
-            }
-            else
+            catch 
             {
                 return false;
+            }
+        }
+        public int Login(LoginCustomModel Login)
+        {
+            try
+            {
+                var login = db.User.Any(x => x.User_Email == Login.Email && x.User_Password == Login.Password);
+                var password = db.User.Any(x => x.User_Password != Login.Password && x.User_Email == Login.Email);
+                var email = db.User.Any(x => x.User_Email != Login.Email && x.User_Password == Login.Password);
+                if (login)
+                {
+                    return 0;
+                }
+                else if (password)
+                {
+                    return 1;
+                }
+                else if (email)
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
+            catch 
+            {
+                return -1;
             }
         }
 
         public User ForgotPassword(SignUpCustomModel customModel)
         {
-           
+            try
+            {
                 User user = db.User.Where(x => x.User_Email.ToLower() == customModel.Email.ToLower()).FirstOrDefault();
                 if (user != null)
                 {
@@ -62,8 +79,24 @@ namespace SchoolManagement_331.Repository.Services
                 {
                     return null;
                 }
-           
-            
+            }
+            catch 
+            {
+                return null;
+            }               
+        }
+
+        public User getUserbyEmail(string email)
+        {
+            try
+            {
+                User user = db.User.Where(x => x.User_Email.ToLower() == email.ToLower()).FirstOrDefault();
+                return user;
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

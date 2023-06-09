@@ -8598,7 +8598,7 @@ a {
         .account-dropdown > .mdl-list__item:first-child .mdl-list__item-primary-content .mdl-list__item-avatar {
             height: 48px;
             width: 48px;
-            background: url(../images/1111.jpg);
+           /* background: url(../images/1111.jpg);*/
             background-size: cover
         }
 

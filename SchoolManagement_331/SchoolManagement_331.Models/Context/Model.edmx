@@ -38,6 +38,15 @@
           <Property Name="UserCity" Type="int" Nullable="false" />
           <Property Name="PostalCode" Type="int" />
         </EntityType>
+        <EntityType Name="ImageTable">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageTitle" Type="varchar(max)" Nullable="false" />
+          <Property Name="image" Type="varchar(max)" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="State">
           <Key>
             <PropertyRef Name="StateID" />
@@ -116,6 +125,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ImageTabl__UserI__4E88ABD4">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ImageTable" Type="Self.ImageTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ImageTable">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__State__CountryID__29572725">
           <End Role="Country" Type="Self.Country" Multiplicity="1" />
           <End Role="State" Type="Self.State" Multiplicity="*" />
@@ -173,6 +194,7 @@
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Form_Data" EntityType="Self.Form_Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageTable" EntityType="Self.ImageTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__City__CountryID__2C3393D0" Association="Self.FK__City__CountryID__2C3393D0">
@@ -194,6 +216,10 @@
           <AssociationSet Name="FK__Form_Data__UserS__30F848ED" Association="Self.FK__Form_Data__UserS__30F848ED">
             <End Role="State" EntitySet="State" />
             <End Role="Form_Data" EntitySet="Form_Data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImageTabl__UserI__4E88ABD4" Association="Self.FK__ImageTabl__UserI__4E88ABD4">
+            <End Role="User" EntitySet="User" />
+            <End Role="ImageTable" EntitySet="ImageTable" />
           </AssociationSet>
           <AssociationSet Name="FK__State__CountryID__29572725" Association="Self.FK__State__CountryID__29572725">
             <End Role="Country" EntitySet="Country" />
@@ -273,8 +299,13 @@
             <Parameter Name="PostalCode" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Sp_Delete_Data">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="ImageTable" EntityType="SchoolManagement_YV331Model.ImageTable" />
+          <AssociationSet Name="FK__ImageTabl__UserI__4E88ABD4" Association="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4">
+            <End Role="User" EntitySet="User" />
+            <End Role="ImageTable" EntitySet="ImageTable" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="City">
           <Key>
@@ -338,6 +369,7 @@
           <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="User_Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="User_Role" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ImageTable" Relationship="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" FromRole="User" ToRole="ImageTable" />
         </EntityType>
         <Association Name="FK__City__CountryID__2C3393D0">
           <End Type="SchoolManagement_YV331Model.Country" Role="Country" Multiplicity="1" />
@@ -411,6 +443,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ImageTable">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" FromRole="ImageTable" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__ImageTabl__UserI__4E88ABD4">
+          <End Type="SchoolManagement_YV331Model.User" Role="User" Multiplicity="1" />
+          <End Type="SchoolManagement_YV331Model.ImageTable" Role="ImageTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ImageTable">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -481,6 +535,16 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Sp_AddEdit_Data" FunctionName="SchoolManagement_YV331Model.Store.Sp_AddEdit_Data" />
           <FunctionImportMapping FunctionImportName="Sp_Delete_Data" FunctionName="SchoolManagement_YV331Model.Store.Sp_Delete_Data" />
+          <EntitySetMapping Name="ImageTable">
+            <EntityTypeMapping TypeName="SchoolManagement_YV331Model.ImageTable">
+              <MappingFragment StoreEntitySet="ImageTable">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="ImageTitle" ColumnName="ImageTitle" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

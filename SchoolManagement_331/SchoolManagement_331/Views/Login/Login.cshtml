@@ -1,4 +1,5 @@
 ﻿@model SchoolManagement_331.Models.CustomModels.LoginCustomModel
+
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LogingLayout.cshtml";
@@ -21,7 +22,7 @@
                     </div>
                     if (TempData["Error"] != null)
                     {
-                        <p class="text-danger">@TempData["Error"] </p>
+                        <p class="text-danger ms-3">@TempData["Error"] </p>
                     }
 
                     <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">

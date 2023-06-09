@@ -12,31 +12,39 @@ namespace SchoolManagement_331.Helper.StateHelper
     {
         public State BindCustomeStateToState(StateCustomeModel State)
         {
-
-
-            State Statemodel = new State()
+            try
             {
-                StateID = State.StateID,
-                StateName = State.StateName,
-                CountryID = State.CountryID
-
-            };
-            return Statemodel;
+                State Statemodel = new State()
+                {
+                    StateID = State.StateID,
+                    StateName = State.StateName,
+                    CountryID = State.CountryID
+                };
+                return Statemodel;
+            }
+            catch
+            {
+                return null;
+            }
 
         }
         public StateCustomeModel BindStateToCustomeState(State state)
         {
-
-            StateCustomeModel model = new StateCustomeModel()
+            try
             {
-               StateID = state.StateID,
-               StateName = state.StateName,
-               CountryID = state.CountryID
-            };
+                StateCustomeModel model = new StateCustomeModel()
+                {
+                    StateID = state.StateID,
+                    StateName = state.StateName,
+                    CountryID = state.CountryID
+                };
+                return model;
 
-
-            return model;
-
+            }
+            catch 
+            {
+                return null;
+            }
         }
     }
 }
