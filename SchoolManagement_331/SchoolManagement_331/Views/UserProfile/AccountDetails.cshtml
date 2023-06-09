@@ -20,7 +20,15 @@
         <header class="colortext">User Profile</header>
         <div class="text-center">
             <div class="column mt-3">
-                <img src="~/Images/@SessionData.ImagePath" />
+                @if (SessionData.ImagePath != null)
+                {
+                    <img src="~/Images/@SessionData.ImagePath" />
+                }
+                else
+
+                {
+                    <img src="~/Images/888-8880154_8-pro-tips-to-get-more-out-of.png" />
+                }
             </div>
             <div class="column mt-3">
                 <div class="input-box colortext">
