@@ -1,0 +1,12 @@
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\Login.Helper.dll
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\Login.Helper.pdb
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\Login.Model.dll
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\EntityFramework.dll
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\Login.Model.pdb
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\Login.Model.dll.config
+C:\yansi\MVC\Login\Login.Helper\bin\Debug\EntityFramework.xml
+C:\yansi\MVC\Login\Login.Helper\obj\Debug\Login.Helper.csproj.AssemblyReference.cache
+C:\yansi\MVC\Login\Login.Helper\obj\Debug\Login.Helper.csproj.CoreCompileInputs.cache
+C:\yansi\MVC\Login\Login.Helper\obj\Debug\Login.Helper.csproj.CopyComplete
+C:\yansi\MVC\Login\Login.Helper\obj\Debug\Login.Helper.dll
+C:\yansi\MVC\Login\Login.Helper\obj\Debug\Login.Helper.pdb

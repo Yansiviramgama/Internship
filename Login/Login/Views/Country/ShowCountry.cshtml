@@ -1,0 +1,39 @@
+﻿@model PagedList.IPagedList<Login.Model.DbContext.Stu_Country>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "ShowCountry";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<h2>ShowCountry</h2>
+<div class="container">
+    <table class="table table-striped table-hover table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @i.ID
+                    </td>
+                    <td>
+                        @i.CountryName
+                    </td>
+                    <td>
+                        <a href="/Country/AddEditCountry/@i.ID">Edit</a> &nbsp;|&nbsp;
+                        <a href="/Country/DeleteCountry/@i.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => @Url.Action("ShowCountry", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+

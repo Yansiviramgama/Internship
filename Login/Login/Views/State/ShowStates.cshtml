@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Login.Model.CustomModel.StateCustomModel>
+@{
+    ViewBag.Title = "ShowStates";
+}
+
+<h2>ShowStates</h2>
+
+<div class="text-center">
+    <table class="table table-striped table-hover table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>State Name</th>
+                <th>Country Name</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @i.StateID
+                    </td>
+                    <td>
+                        @i.StateName
+                    </td>
+                    <td>
+                        @i.CountryName
+                    </td>
+                    <td>
+                        <a href="/State/AddEditState/@i.StateID">Edit</a>|
+                        <a href="/State/DeleteState/@i.StateID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

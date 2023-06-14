@@ -1,0 +1,23 @@
+﻿@model Login.Model.CustomModel.CountryCustomModel
+@{
+    ViewBag.Title = "AddCountry";
+
+}
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h1 class="text-center colortext">Add New Country</h1>
+    </div>
+    <div>
+        @using (Html.BeginForm("AddEditCountry", "Country", FormMethod.Post))
+        {
+            <div class="d-flex justify-content-between">
+                @Html.HiddenFor(x => x.CountryID, new { @class = "form-control" })
+                @Html.TextBoxFor(x => x.CountryName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CountryName, "", new { @class = "text-danger" })
+                <button type="submit" class="btn btn-primary px-5 mx-5">Save</button>
+            </div>
+        }
+    </div>
+</div>
+

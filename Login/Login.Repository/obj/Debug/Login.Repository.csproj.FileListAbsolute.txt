@@ -1,0 +1,15 @@
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\Login.Repository.dll.config
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\Login.Repository.dll
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\Login.Repository.pdb
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\EntityFramework.dll
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\EntityFramework.xml
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\yansi\MVC\Login\Login.Repository\obj\Debug\Login.Repository.csproj.AssemblyReference.cache
+C:\yansi\MVC\Login\Login.Repository\obj\Debug\Login.Repository.csproj.CoreCompileInputs.cache
+C:\yansi\MVC\Login\Login.Repository\obj\Debug\Login.Repository.csproj.CopyComplete
+C:\yansi\MVC\Login\Login.Repository\obj\Debug\Login.Repository.dll
+C:\yansi\MVC\Login\Login.Repository\obj\Debug\Login.Repository.pdb
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\Login.Model.dll
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\Login.Model.pdb
+C:\yansi\MVC\Login\Login.Repository\bin\Debug\Login.Model.dll.config
