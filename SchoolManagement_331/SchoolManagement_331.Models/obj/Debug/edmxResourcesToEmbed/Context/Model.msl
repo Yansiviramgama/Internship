@@ -43,15 +43,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="State">
-      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.State">
-        <MappingFragment StoreEntitySet="State">
-          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-          <ScalarProperty Name="StateName" ColumnName="StateName" />
-          <ScalarProperty Name="StateID" ColumnName="StateID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="User">
       <EntityTypeMapping TypeName="SchoolManagement_YV331Model.User">
         <MappingFragment StoreEntitySet="User">
@@ -75,5 +66,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GETALLSTATES" FunctionName="SchoolManagement_YV331Model.Store.GETALLSTATES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SchoolManagement_YV331Model.GETALLSTATES_Result">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

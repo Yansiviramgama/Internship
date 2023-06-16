@@ -5,8 +5,8 @@ C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\bin\Debug\EntityFr
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\bin\Debug\EntityFramework.SqlServer.dll
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\bin\Debug\EntityFramework.xml
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\bin\Debug\EntityFramework.SqlServer.xml
-C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\obj\Debug\SchoolManagement_331.Models.csproj.AssemblyReference.cache
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\obj\Debug\SchoolManagement_331.Models.csproj.CoreCompileInputs.cache
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\obj\Debug\SchoolManagement_331.Models.csproj.CopyComplete
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\obj\Debug\SchoolManagement_331.Models.dll
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\obj\Debug\SchoolManagement_331.Models.pdb
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Models\obj\Debug\SchoolManagement_331.Models.csproj.AssemblyReference.cache

@@ -11,13 +11,13 @@
     <div>
         @using (Html.BeginForm("AddCity", "City", FormMethod.Post))
         {
-            <div class="d-flex justify-content-between">
-                @Html.HiddenFor(x => x.CityID, new { @class = "form-control" })
-                @Html.DropDownListFor(X => X.CountryID, (IEnumerable<SelectListItem>)ViewBag.CountryList, " -- Select Country -- ", new { @class = "select-box mx-2", id = "Country" })
-                @Html.DropDownListFor(X => X.StateID, new SelectList(""), " -- Select State -- ", new { @class = "select-box mx-2", id = "State" })
-                @Html.TextBoxFor(x => x.CityName, new { @class = "form-control" })
-                <button type="submit" class="btn btn-primary px-5 mx-5">Save</button>
-            </div>
+        <div class="d-flex justify-content-between">
+            @Html.HiddenFor(x => x.CityID, new { @class = "form-control" })
+            @Html.DropDownListFor(X => X.CountryID, (IEnumerable<SelectListItem>)ViewBag.CountryList, " -- Select Country -- ", new { @class = "select-box mx-2", id = "Country" })
+            @Html.DropDownListFor(X => X.StateID, (IEnumerable<SelectListItem>)ViewBag.StateList, " -- Select State -- ", new { @class = "select-box mx-2", id = "State" })
+            @Html.TextBoxFor(x => x.CityName, new { @class = "form-control" })
+            <button type="submit" class="btn btn-primary px-5 mx-5">Save</button>
+        </div>
         }
     </div>
 </div>

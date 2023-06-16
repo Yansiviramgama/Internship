@@ -33,7 +33,7 @@
 
 <div class="container_b">
     <div class="table_bg">
-        <div class="main colortext">
+        <div class="main  colortext">
             @if (TempData["Error"] != null)
             {
                 <h4 class="text-danger">@TempData["Error"]</h4>
@@ -55,7 +55,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="statedata">
                     @foreach (var i in Model)
                     {
                         <tr class="colortext">
@@ -83,4 +83,25 @@
 
     </div>
 </div>
+@*For API*@
+@*<script>
+    $(document).ready(function () {
+        $.ajax({
+            method: "Get",
+            url: "http://localhost:51118/Api/State",
+            success: function (res) {
+                console.log(res);
+                var data = JSON.parse(res)
+                console.log(data)
+                data.forEach(ele => {
 
+                    $("#statedata").append(`<tr><td>${ele.StateID}</td><td>${ele.StateName}</td><td>CountryName Coming soon</td></tr>`)
+                })
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+
+    })
+</script>*@

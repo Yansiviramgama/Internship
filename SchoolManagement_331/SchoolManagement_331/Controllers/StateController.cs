@@ -1,4 +1,5 @@
-﻿using SchoolManagement_331.Helper.StateHelper;
+﻿using Newtonsoft.Json;
+using SchoolManagement_331.Helper.StateHelper;
 using SchoolManagement_331.Models.Context;
 using SchoolManagement_331.Models.CustomModels;
 using SchoolManagement_331.Repository.Repository;
@@ -7,6 +8,8 @@ using SchoolManagement_331.SessionHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -73,14 +76,46 @@ namespace SchoolManagement_331.Controllers
                 return RedirectToAction("Error", "Home");
             }
         }
-        public ActionResult ShowState()
-        {
+        public  ActionResult ShowState()
+            {
             try
             {
                 var States = services.GetStates();
                 return View(States);
+                //IEnumerable<State> cn = null;
+                //using (var client = new HttpClient())
+                //{
+                //    client.BaseAddress = new Uri("http://localhost:51118/Api/State");
+
+
+
+                //    var responseTask = client.GetAsync("State");
+                //    responseTask.Wait();
+
+
+
+                //    var result = responseTask.Result;
+
+
+                //    if (result.IsSuccessStatusCode)
+                //    {
+                //        var readTask = result.Content.ReadAsAsync<List<State>>();
+                //        readTask.Wait();
+                //        cn = readTask.Result;
+                //    }
+                //    else
+                //    {
+                //        cn = Enumerable.Empty<State>();
+                //        ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
+                //    }
+                //}
+                //return View(cn);
+
+
+
+                //return View();
             }
-            catch (Exception)
+            catch 
             {
                 return RedirectToAction("Error", "Home");
             }

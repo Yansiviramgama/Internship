@@ -28,14 +28,9 @@
     <EntitySet Name="City" EntityType="SchoolManagement_YV331Model.City" />
     <EntitySet Name="Country" EntityType="SchoolManagement_YV331Model.Country" />
     <EntitySet Name="Form_Data" EntityType="SchoolManagement_YV331Model.Form_Data" />
-    <EntitySet Name="State" EntityType="SchoolManagement_YV331Model.State" />
     <EntitySet Name="User" EntityType="SchoolManagement_YV331Model.User" />
     <AssociationSet Name="FK__City__CountryID__2C3393D0" Association="SchoolManagement_YV331Model.FK__City__CountryID__2C3393D0">
       <End Role="Country" EntitySet="Country" />
-      <End Role="City" EntitySet="City" />
-    </AssociationSet>
-    <AssociationSet Name="FK__City__StateID__2D27B809" Association="SchoolManagement_YV331Model.FK__City__StateID__2D27B809">
-      <End Role="State" EntitySet="State" />
       <End Role="City" EntitySet="City" />
     </AssociationSet>
     <AssociationSet Name="FK__Form_Data__UserC__31EC6D26" Association="SchoolManagement_YV331Model.FK__Form_Data__UserC__31EC6D26">
@@ -44,14 +39,6 @@
     </AssociationSet>
     <AssociationSet Name="FK__Form_Data__UserC__300424B4" Association="SchoolManagement_YV331Model.FK__Form_Data__UserC__300424B4">
       <End Role="Country" EntitySet="Country" />
-      <End Role="Form_Data" EntitySet="Form_Data" />
-    </AssociationSet>
-    <AssociationSet Name="FK__State__CountryID__29572725" Association="SchoolManagement_YV331Model.FK__State__CountryID__29572725">
-      <End Role="Country" EntitySet="Country" />
-      <End Role="State" EntitySet="State" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Form_Data__UserS__30F848ED" Association="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED">
-      <End Role="State" EntitySet="State" />
       <End Role="Form_Data" EntitySet="Form_Data" />
     </AssociationSet>
     <FunctionImport Name="Sp_AddEdit_Data">
@@ -76,6 +63,20 @@
       <End Role="User" EntitySet="User" />
       <End Role="ImageTable" EntitySet="ImageTable" />
     </AssociationSet>
+    <EntitySet Name="State" EntityType="SchoolManagement_YV331Model.State" />
+    <AssociationSet Name="FK__City__StateID__2D27B809" Association="SchoolManagement_YV331Model.FK__City__StateID__2D27B809">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__CountryID__29572725" Association="SchoolManagement_YV331Model.FK__State__CountryID__29572725">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Form_Data__UserS__30F848ED" Association="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED">
+      <End Role="State" EntitySet="State" />
+      <End Role="Form_Data" EntitySet="Form_Data" />
+    </AssociationSet>
+    <FunctionImport Name="GETALLSTATES" ReturnType="Collection(SchoolManagement_YV331Model.GETALLSTATES_Result)" />
   </EntityContainer>
   <EntityType Name="City">
     <Key>
@@ -86,8 +87,8 @@
     <Property Name="CountryID" Type="Int32" Nullable="false" />
     <Property Name="StateID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Country" Relationship="SchoolManagement_YV331Model.FK__City__CountryID__2C3393D0" FromRole="City" ToRole="Country" />
-    <NavigationProperty Name="State" Relationship="SchoolManagement_YV331Model.FK__City__StateID__2D27B809" FromRole="City" ToRole="State" />
     <NavigationProperty Name="Form_Data" Relationship="SchoolManagement_YV331Model.FK__Form_Data__UserC__31EC6D26" FromRole="City" ToRole="Form_Data" />
+    <NavigationProperty Name="State" Relationship="SchoolManagement_YV331Model.FK__City__StateID__2D27B809" FromRole="City" ToRole="State" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -119,17 +120,6 @@
     <NavigationProperty Name="Country" Relationship="SchoolManagement_YV331Model.FK__Form_Data__UserC__300424B4" FromRole="Form_Data" ToRole="Country" />
     <NavigationProperty Name="State" Relationship="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED" FromRole="Form_Data" ToRole="State" />
   </EntityType>
-  <EntityType Name="State">
-    <Key>
-      <PropertyRef Name="StateID" />
-    </Key>
-    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="StateName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="CountryID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="City" Relationship="SchoolManagement_YV331Model.FK__City__StateID__2D27B809" FromRole="State" ToRole="City" />
-    <NavigationProperty Name="Country" Relationship="SchoolManagement_YV331Model.FK__State__CountryID__29572725" FromRole="State" ToRole="Country" />
-    <NavigationProperty Name="Form_Data" Relationship="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED" FromRole="State" ToRole="Form_Data" />
-  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="UserID" />
@@ -150,18 +140,6 @@
       </Principal>
       <Dependent Role="City">
         <PropertyRef Name="CountryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__City__StateID__2D27B809">
-    <End Type="SchoolManagement_YV331Model.State" Role="State" Multiplicity="1" />
-    <End Type="SchoolManagement_YV331Model.City" Role="City" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="State">
-        <PropertyRef Name="StateID" />
-      </Principal>
-      <Dependent Role="City">
-        <PropertyRef Name="StateID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -189,6 +167,51 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="ImageTable">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" FromRole="ImageTable" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__ImageTabl__UserI__4E88ABD4">
+    <End Type="SchoolManagement_YV331Model.User" Role="User" Multiplicity="1" />
+    <End Type="SchoolManagement_YV331Model.ImageTable" Role="ImageTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ImageTable">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="SchoolManagement_YV331Model.FK__City__StateID__2D27B809" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="SchoolManagement_YV331Model.FK__State__CountryID__29572725" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Form_Data" Relationship="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED" FromRole="State" ToRole="Form_Data" />
+  </EntityType>
+  <Association Name="FK__City__StateID__2D27B809">
+    <End Type="SchoolManagement_YV331Model.State" Role="State" Multiplicity="1" />
+    <End Type="SchoolManagement_YV331Model.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__State__CountryID__29572725">
     <End Type="SchoolManagement_YV331Model.Country" Role="Country" Multiplicity="1" />
     <End Type="SchoolManagement_YV331Model.State" Role="State" Multiplicity="*" />
@@ -213,26 +236,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="ImageTable">
-    <Key>
-      <PropertyRef Name="ImageId" />
-    </Key>
-    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ImageTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="UserId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" FromRole="ImageTable" ToRole="User" />
-  </EntityType>
-  <Association Name="FK__ImageTabl__UserI__4E88ABD4">
-    <End Type="SchoolManagement_YV331Model.User" Role="User" Multiplicity="1" />
-    <End Type="SchoolManagement_YV331Model.ImageTable" Role="ImageTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="ImageTable">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <ComplexType Name="GETALLSTATES_Result">
+    <Property Type="Int32" Name="StateID" Nullable="false" />
+    <Property Type="String" Name="StateName" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="CountryID" Nullable="false" />
+  </ComplexType>
 </Schema>

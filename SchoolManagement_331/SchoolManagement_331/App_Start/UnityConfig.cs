@@ -22,8 +22,8 @@ namespace SchoolManagement_331
             container.RegisterType<IStateInterface, StateServices>();
             container.RegisterType<ICityInterface, CityServices>();
             container.RegisterType<IFormDetailsInterface, FormDetailsServices>();
+            container.RegisterType<IItemInterface, ItemServices>();
             
-
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

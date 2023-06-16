@@ -11,7 +11,7 @@ body {
     display: flex;
 }
 
-input, select {
+.input, .select {
     background: #2c2c2c;
 }
 #IMAGEPATH{
@@ -57,7 +57,7 @@ input, select {
         padding: 0 15px;
     }
 
-.form .select-box {
+.form .select-box  {
     position: relative;
     height: 50px;
     width: 100%;

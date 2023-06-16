@@ -17,17 +17,17 @@
 <body>
 
     <div class="container mt-4 p-5">
-        <header class="colortext">User Profile</header>
+        <h3 class="colortext text-center">User Profile</h3>
         <div class="text-center">
             <div class="column mt-3">
                 @if (SessionData.ImagePath != null)
                 {
-                    <img src="~/Images/@SessionData.ImagePath" />
+                    <img src="~/Images/@SessionData.ImagePath" height="255rem"/>
                 }
                 else
 
                 {
-                    <img src="~/Images/888-8880154_8-pro-tips-to-get-more-out-of.png" />
+            <img src="~/Content/images/888-8880154_8-pro-tips-to-get-more-out-of.png" />
                 }
             </div>
             <div class="column mt-3">

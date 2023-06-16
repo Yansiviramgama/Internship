@@ -45,6 +45,7 @@
     <Compile Include="CountryHelper\CountryHelper.cs" />
     <Compile Include="FormDetailsHelper\FormDetailsHelper.cs" />
     <Compile Include="GlobalEnum\RoleEnum.cs" />
+    <Compile Include="OrderHelper\CustomOrderToUserOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginSignUpHelper\SignUpHelper.cs" />
     <Compile Include="StateHelper\StateHelper.cs" />

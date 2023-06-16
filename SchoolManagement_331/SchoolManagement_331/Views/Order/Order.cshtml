@@ -1,0 +1,341 @@
+﻿@model SchoolManagement_331.Models.Context.TableItemMaster
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .colorText {
+        color: white;
+    }
+</style>
+<h2 class="colorText text-center">My Order</h2>
+
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <div class="container w-25 cen">
+        
+        <div class="cen colorText">
+            @Html.Label("Items")
+            @Html.DropDownListFor(x => x.ItemID , ViewBag.ItemList as SelectList, "--Select Item--", new { @class = "form-control", id = "Item" })
+
+            @Html.Label("Qty")
+            <div class="row">
+                <div class="col-md-9 colorText">
+                    @Html.Editor("Qty", new { htmlAttributes = new { @class = "form-control", id = "Qty", @type = "number" } })
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" id="ItemAdd">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <table class="table table-bordered colorText">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Items</th>
+                    <th>Qty</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4 class="colorText">Total Item</h4>
+                    </div>
+                    <div class="col-md-9">
+                        <h4 class="TotalQty colorText"></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4 class="colorText">Amount</h4>
+                    </div>
+                    <div class="col-md-9">
+                        <h4 class="FinalAmt colorText"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container cen">
+
+        <div class="cen">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="colorText">CGST 5%</h4>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="CGST colorText"></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="colorText">SGST 5%</h4>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="SGST colorText"></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="colorText">Total payable amount</h4>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="TAmt colorText"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container cen">
+        <div class="">
+            <div class="row">
+                <div class="col-md-4 colorText">
+                    @Html.Label("Apply Coupon")
+                </div>
+                <div class="col-md-4 colorText">
+                    @Html.DropDownList("Coupon", new SelectList(""), new { @class = "form-control", id = "CpnList" })
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary cen" type="button" id="CouponAdd">Apply</button>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="cen colorText">
+            Net Payable Amount  <h4 class="NetAmt colorText"></h4>
+        </div>
+        <div class="cen">
+            <button class="btn btn-primary" type="button" id="PlaceOrder">Submit</button>
+        </div>
+    </div>
+}
+@*<script src="https://code.jquery.com/jquery-3.7.0.js"></script>*@
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $(document).ready(function () {
+        var i = 1;
+        var ItemArr = [];
+        $('.editSave').hide();
+        var FinalAmount = 0;
+        //$.ajax({
+        //    type: 'GET',
+        //    url: "/Order/GetAllItems",
+        //    success: function (res) {
+        //        var data = JSON.parse(res);
+        //        data.forEach(ele => {
+        //            $('#Item').append(`<option value = ${ele.ItemID}>${ele.Item_Name}</option>`);
+        //        });
+        //    }
+        //})
+
+         GetCoupon();
+        $('#ItemAdd').click(function () {
+            var data = [];
+            var ItemId = $('#Item').val();
+            var Qty = $('#Qty').val();
+            if (Qty == '' || Qty == '0') {
+                alert("Please Enter Valid Quantity")
+            }
+            else {
+                $.ajax({
+                    type: 'GET',
+                    url: "/Order/GetItembyId/" + ItemId,
+                    success: function (res) {
+                        data = JSON.parse(res);
+                        var obj = {
+                            "Id": i,
+                            "ItemName": data.Item_Name,
+                            "ItemQty": Qty,
+                            "ItemAmount": data.Item_Amount,
+                            "Total": data.Item_Amount * Qty
+                            
+
+                        };
+                        i++;
+                        ItemArr.push(obj);
+                        TablePrint(ItemArr);
+                        $('.editSave').hide();
+                        $('.edit').show();
+
+                        UpdateValues();
+
+                        GetCoupon();
+                    }
+                })
+            }
+        });
+        $(document).on('click', '.del', function () {
+            var index = $(this).parents("tr").find('td : eq(0)').html();
+
+            var IndexofDel = ItemArr.findIndex(x => x.id == index);
+            alert(" Are You Sure ,You Want To Delete It?")
+            ItemArr.splice(parseInt(IndexofDel), 1);
+            TablePrint(ItemArr);
+           UpdateValues();
+            GetCoupon();
+        });
+        $(document).on('click', '.edit', function () {
+            var Qty = $($($(this).parents('tr').children()[1]).children()[0]).val();
+            $($($(this).parents('tr').children()[2]).children()[0]).removeAttr("disabled");
+
+            $(this).hide();
+            $(this).next("button").show();
+        });
+
+
+        $(document).on('click', '.editSave', function () {
+            var Qty = $($($(this).parents('tr').children()[2]).children()[0]).val();
+            var Amt = $($(this).parents('tr').children()[3]).html();
+            console.log(Qty);
+            console.log(Amt);
+            $(this).prev("button").show();
+
+            $($($(this).parents('tr').children()[1]).children()[0]).attr("disabled");
+            var index = $($($(this).parents("tr").html()).children()[0]).html();
+            console.log("abc");
+
+            var indexdata = ItemArr.findIndex(x => x.Id == index);
+            console.log(indexdata);
+            ItemArr[parseInt(indexdata)].ItemQty = parseInt(Qty);
+            ItemArr[parseInt(indexdata)].Total = parseInt(Qty * Amt);
+            TablePrint(ItemArr);
+            $(this).hide();
+            UpdateValues();
+            GetCoupon();
+        });
+
+        $('#CouponAdd').click(function () {
+            var final = 0;
+            var TotalQty = 0;
+
+            $('.Total').each(function () {
+                final = final + parseFloat(($(this).html()));
+            });
+
+            var netAmt = parseFloat($('.TAmt').html());
+
+            var data = [];
+
+            var CpnId = $('#CpnList').val();
+            $.ajax({
+                type: 'GET',
+                url: "/Order/GetCouponbyId/" + CpnId,
+                success: function (res) {
+                    data = JSON.parse(res);
+
+                    if (data.Type == 1) {
+                        $('.NetAmt').html(parseFloat(netAmt - (netAmt * data.Percentage * 0.01)));
+                    }
+                    else if (data.Type == 2) {
+                        $('.NetAmt').html(parseFloat(netAmt - data.Flat_Amount));
+                    }
+                    else {
+                        alert("Something went wrong!");
+                        return;
+                    }
+                }
+            });
+
+        });
+
+        $('#PlaceOrder').click(function () {
+            var Items = [];
+            ItemArr.forEach(ele => {
+                Items.push({
+                    ITEMID: ele.Id,
+                    ITEM_NAME: ele.ItemName,
+                    ITEM_AMOUNT: ele.ItemAmount,
+                    ITEM_QTY: ele.ItemQty
+                });
+            });
+            console.log(Items);
+            var obj = {
+                "Total_Qty": $('.TotalQty').html(),
+                "Amt": $('.FinalAmt').html(),
+                "After_GST": $('.TAmt').html(),
+                "Promo": $('#CpnList').val(),
+                "Total_Payable": $('.NetAmt').html(),
+                "UserId": 1,
+                "Items": Items
+            }
+            console.log(obj);
+            $.ajax({
+                method: "POST",
+                url: "/Order/PlaceOrder",
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(obj),
+                success: function () {
+                    window.location.href = '@Url.Action("OrderList","Order")';
+                },
+                error: function () {
+                    window.location.href = '@Url.Action("OrderList", "Order")';
+                }
+            });
+        });
+    });
+    function UpdateValues() {
+        $('.Qt').prop("disabled", true);
+        var final = 0;
+        var TotalQty = 0;
+        $('.Total').each(function () {
+            final = final + parseInt(($(this).html()));
+        });
+
+        $('.Qt').each(function () {
+            TotalQty = TotalQty + parseInt(($(this).val()));
+        });
+        $('.TotalQty').html(TotalQty);
+        $('.FinalAmt').html(final);
+        $('.CGST').html(final * 0.05);
+        $('.SGST').html(final * 0.05);
+        var CGST = parseInt(final * 0.05);
+        var SGST = parseInt(final * 0.05);
+        var netAmt = parseInt(final + CGST + SGST);
+        $('.TAmt').html(netAmt);
+        $('.NetAmt').html(netAmt);
+    }
+
+    function GetCoupon() {
+        $.ajax({
+            type: 'GET',
+            url: "/Home/GetAllCoupon",
+            success: function (res) {
+                var data = JSON.parse(res);
+                $('#CpnList').empty();
+                $('#CpnList').append(`<option value = ""> -- Select Coupon -- </option>`);
+                data.forEach(ele => {
+                    $('#CpnList').append(`<option value = ${ele.CouponICoded}>${ele.Code}</option>`);
+                });
+            }
+        });
+    }
+    function TablePrint(data) {
+        $('.table tbody').empty();
+        data.forEach(e => {
+            $('.table tbody').append(`<tr>
+                    <td><p>${e.Id}</p></td>
+                    <td>${e.ItemName}</td>
+                    <td ><input type = "number" class = "Qt" value=${e.ItemQty} disabled></td>
+                    <td> ${e.ItemAmount} </td><td class="Total" > ${e.Total} </ td>                  
+                    <td> <button class= "btn btn-success edit" type = "button" > Edit</button >
+                     <button class="btn btn-primary editSave" type="button" >Save</button></td> 
+                     <td><button class="btn btn-danger del" type="button">Delete</button></td></tr>`);
+        });
+
+        $('.editSave').hide();
+    }
+
+
+</script>

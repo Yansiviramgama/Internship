@@ -56,6 +56,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -144,6 +147,7 @@
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
@@ -166,6 +170,7 @@
     <Content Include="Content\images\1111.jpg" />
     <Content Include="Content\images\404.svg" />
     <Content Include="Content\images\61227.png" />
+    <Content Include="Content\images\888-8880154_8-pro-tips-to-get-more-out-of.png" />
     <Content Include="Content\images\active_marker.png" />
     <Content Include="Content\images\Bobby.PNG" />
     <Content Include="Content\images\buffer.svg" />
@@ -198,7 +203,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\20230609-pexels-cátia-matos-1072179.jpg" />
-    <Content Include="Images\888-8880154_8-pro-tips-to-get-more-out-of.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -256,6 +260,7 @@
     <Content Include="Views\UserProfile\AccountDetails.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\UserProfile\EditProfile.cshtml" />
+    <Content Include="Views\Order\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -45,9 +45,10 @@ namespace SchoolManagement_331.Controllers
                 }
                 else
                 {
+                    City city = CityServices.GetCityById(Id);
                     ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                    ViewBag.StateList = new SelectList(stateServices.GetStates(), "StateID", "StateName");
-                    City city = services.GetCityById(Id);
+                    ViewBag.StateList =  new SelectList(stateServices.GetStatesbyCountry(city.CountryID), "StateID", "StateName");
+                    //City city = services.GetCityById(Id);
                     CityCustomeModel cityCustomeModel = Helper.BindCityToCustomeCity(city);
                     return View(cityCustomeModel);
                 }
@@ -67,16 +68,16 @@ namespace SchoolManagement_331.Controllers
                 if (Id == null)
                 {
 
-                    ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                    ViewBag.StateList = new SelectList(stateServices.GetStates(), "StateID", "StateName");
+                    //ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                    //ViewBag.StateList = new SelectList(stateServices.GetStates(), "StateID", "StateName");
                     services.AddCity(City, 0);
                     return RedirectToAction("ShowCity","City");
 
                 }
                 else
                 {
-                    ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
-                    ViewBag.StateList = new SelectList(stateServices.GetStates(), "StateID", "StateName");
+                    //ViewBag.CountryList = new SelectList(CountryServices.GetCountries(), "CountryID", "CountryName");
+                    //ViewBag.StateList = new SelectList(stateServices.GetStates(), "StateID", "StateName");
                     services.AddCity(City,Id);
                     return RedirectToAction("ShowCity", "City");
                 }
@@ -116,18 +117,13 @@ namespace SchoolManagement_331.Controllers
             }
             catch (Exception)
             {
-
                 return RedirectToAction("Error", "Home");
             }
-
-
-
         }
         public JsonResult GetStates(int id)
         {
             try
-            {
-          
+            {         
                 db.Configuration.ProxyCreationEnabled = false;
                 List<State> data = db.State.Where(x => x.CountryID == id).ToList();
                 var jsonString = JsonConvert.SerializeObject(data);

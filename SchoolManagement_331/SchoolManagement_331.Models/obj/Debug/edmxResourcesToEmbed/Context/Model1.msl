@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SchoolManagement_YV331ModelStoreContainer" CdmEntityContainer="SchoolManagement_YV331Entities">
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Form_Data">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.Form_Data">
+        <MappingFragment StoreEntitySet="Form_Data">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="UserCountry" ColumnName="UserCountry" />
+          <ScalarProperty Name="UserState" ColumnName="UserState" />
+          <ScalarProperty Name="UserCity" ColumnName="UserCity" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageTable">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.ImageTable">
+        <MappingFragment StoreEntitySet="ImageTable">
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="ImageTitle" ColumnName="ImageTitle" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GETALLSTATES" FunctionName="SchoolManagement_YV331Model.Store.GETALLSTATES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SchoolManagement_YV331Model.GETALLSTATES_Result">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_City" FunctionName="SchoolManagement_YV331Model.Store.Sp_AddEdit_City" />
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_Country" FunctionName="SchoolManagement_YV331Model.Store.Sp_AddEdit_Country" />
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_Data" FunctionName="SchoolManagement_YV331Model.Store.Sp_AddEdit_Data" />
+    <FunctionImportMapping FunctionImportName="Sp_AddEdit_State" FunctionName="SchoolManagement_YV331Model.Store.Sp_AddEdit_State" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_City" FunctionName="SchoolManagement_YV331Model.Store.Sp_Delete_City" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_Country" FunctionName="SchoolManagement_YV331Model.Store.Sp_Delete_Country" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_Data" FunctionName="SchoolManagement_YV331Model.Store.Sp_Delete_Data" />
+    <FunctionImportMapping FunctionImportName="Sp_Delete_State" FunctionName="SchoolManagement_YV331Model.Store.Sp_Delete_State" />
+    <EntitySetMapping Name="CouponType">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.CouponType">
+        <MappingFragment StoreEntitySet="CouponType">
+          <ScalarProperty Name="Coupon_Type" ColumnName="Coupon_Type" />
+          <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemDetails">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.ItemDetails">
+        <MappingFragment StoreEntitySet="ItemDetails">
+          <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+          <ScalarProperty Name="ITEM_PRICE" ColumnName="ITEM_PRICE" />
+          <ScalarProperty Name="ITEM_QTY" ColumnName="ITEM_QTY" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableCouponCodeMaster">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.TableCouponCodeMaster">
+        <MappingFragment StoreEntitySet="TableCouponCodeMaster">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UsageLimit" ColumnName="UsageLimit" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="Flat_Amount" ColumnName="Flat_Amount" />
+          <ScalarProperty Name="CouponType" ColumnName="CouponType" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CouponICoded" ColumnName="CouponICoded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableItemMaster">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.TableItemMaster">
+        <MappingFragment StoreEntitySet="TableItemMaster">
+          <ScalarProperty Name="Item_Amount" ColumnName="Item_Amount" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserOrder">
+      <EntityTypeMapping TypeName="SchoolManagement_YV331Model.UserOrder">
+        <MappingFragment StoreEntitySet="UserOrder">
+          <ScalarProperty Name="TOTAL_PAYABLE" ColumnName="TOTAL_PAYABLE" />
+          <ScalarProperty Name="PROMO" ColumnName="PROMO" />
+          <ScalarProperty Name="AFTER_GST" ColumnName="AFTER_GST" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Total_Qty" ColumnName="Total_Qty" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GET_ITEM_BY_USERID" FunctionName="SchoolManagement_YV331Model.Store.GET_ITEM_BY_USERID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SchoolManagement_YV331Model.GET_ITEM_BY_USERID_Result">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Total_Qty" ColumnName="Total_Qty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AFTER_GST" ColumnName="AFTER_GST" />
+          <ScalarProperty Name="PROMO" ColumnName="PROMO" />
+          <ScalarProperty Name="TOTAL_PAYABLE" ColumnName="TOTAL_PAYABLE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_QTY" ColumnName="ITEM_QTY" />
+          <ScalarProperty Name="ITEM_PRICE" ColumnName="ITEM_PRICE" />
+          <ScalarProperty Name="ORDERID1" ColumnName="ORDERID1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

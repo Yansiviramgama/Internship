@@ -18,6 +18,7 @@ namespace SchoolManagement_331.Models.Context
         public User()
         {
             this.ImageTable = new HashSet<ImageTable>();
+            this.UserOrder = new HashSet<UserOrder>();
         }
     
         public int UserID { get; set; }
@@ -28,5 +29,7 @@ namespace SchoolManagement_331.Models.Context
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ImageTable> ImageTable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserOrder> UserOrder { get; set; }
     }
 }

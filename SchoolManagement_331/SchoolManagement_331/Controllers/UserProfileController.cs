@@ -15,8 +15,7 @@ namespace SchoolManagement_331.Controllers
     [Validate]
     public class UserProfileController : Controller
     {
-        SchoolManagement_YV331Entities db = new SchoolManagement_YV331Entities();
-        SignUpHelper hepler = new SignUpHelper();
+        SchoolManagement_YV331Entities db = new SchoolManagement_YV331Entities();     
         public IUserPanelInterfacecs userPanel;
         public UserProfileController(IUserPanelInterfacecs interfacecs)
         {

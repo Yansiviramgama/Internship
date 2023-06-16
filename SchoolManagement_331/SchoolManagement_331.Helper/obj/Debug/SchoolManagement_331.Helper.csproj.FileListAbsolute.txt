@@ -1,12 +1,12 @@
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\SchoolManagement_331.Helper.dll
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\SchoolManagement_331.Helper.pdb
-C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.csproj.AssemblyReference.cache
-C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.csproj.CoreCompileInputs.cache
-C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.dll
-C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.pdb
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\SchoolManagement_331.Models.dll
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\EntityFramework.dll
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\SchoolManagement_331.Models.pdb
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\SchoolManagement_331.Models.dll.config
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\bin\Debug\EntityFramework.xml
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.csproj.AssemblyReference.cache
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.csproj.CoreCompileInputs.cache
 C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.csproj.CopyComplete
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.dll
+C:\yansi\MVC\SchoolManagement_331\SchoolManagement_331.Helper\obj\Debug\SchoolManagement_331.Helper.pdb

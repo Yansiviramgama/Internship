@@ -127,7 +127,12 @@ namespace SchoolManagement_331.Controllers
                 {
                     return RedirectToAction("Login", "Login");
                 }
-                return View();
+                else
+                {
+                    TempData["Error"] = "Email Is Already Exists";
+                    return View();
+                }
+                
             }
             catch
             {

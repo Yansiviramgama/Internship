@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fa6047c99a564848974c4ffab145aee4" Name="Diagram1">
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.City" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.Country" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.Form_Data" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.ImageTable" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.State" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.User" Width="1.5" PointX="2.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__City__CountryID__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__City__StateID__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__Form_Data__UserC__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__Form_Data__UserC__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__State__CountryID__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__Form_Data__UserS__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__ImageTabl__UserI__4E88ABD4" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.CouponType" Width="1.5" PointX="9.375" PointY="10.5" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.ItemDetails" Width="1.5" PointX="7.25" PointY="10.125" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.TableCouponCodeMaster" Width="1.5" PointX="11.625" PointY="10" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.TableItemMaster" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SchoolManagement_YV331Model.UserOrder" Width="1.5" PointX="5" PointY="9.75" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__TableCoup__Coupo__60A75C0F" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__ItemDetai__ORDER__66603565" />
+        <AssociationConnector Association="SchoolManagement_YV331Model.FK__UserOrder__UserI__6383C8BA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

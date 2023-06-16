@@ -3,10 +3,8 @@ using SchoolManagement_331.Models.Context;
 using SchoolManagement_331.Models.CustomModels;
 using SchoolManagement_331.Repository.Repository;
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolManagement_331.Repository.Services
 {
@@ -19,17 +17,26 @@ namespace SchoolManagement_331.Repository.Services
         {
             try
             {
-                User main = SignUpHelper.BindCustomesignUpToSignUp(user);
-                if (main != null)
+                var email = db.User.Any(x => x.User_Email == user.Email);
+                if(email == false)
                 {
-                    db.User.Add(main);
-                    db.SaveChanges();
-                    return true;
+                    User main = SignUpHelper.BindCustomesignUpToSignUp(user);
+                    if (main != null)
+                    {
+                        db.User.Add(main);
+                        db.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
                     return false;
                 }
+               
             }
             catch 
             {
@@ -98,5 +105,6 @@ namespace SchoolManagement_331.Repository.Services
                 return null;
             }
         }
+
     }
 }

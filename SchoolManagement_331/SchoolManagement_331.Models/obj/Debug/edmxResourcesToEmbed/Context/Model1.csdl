@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchoolManagement_YV331Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="StateID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__City__CountryID__2C3393D0" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK__City__StateID__2D27B809" FromRole="City" ToRole="State" />
+    <NavigationProperty Name="Form_Data" Relationship="Self.FK__Form_Data__UserC__31EC6D26" FromRole="City" ToRole="Form_Data" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK__City__CountryID__2C3393D0" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Form_Data" Relationship="Self.FK__Form_Data__UserC__300424B4" FromRole="Country" ToRole="Form_Data" />
+    <NavigationProperty Name="State" Relationship="Self.FK__State__CountryID__29572725" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Form_Data">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserCountry" Type="Int32" Nullable="false" />
+    <Property Name="UserState" Type="Int32" Nullable="false" />
+    <Property Name="UserCity" Type="Int32" Nullable="false" />
+    <Property Name="PostalCode" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Form_Data__UserC__31EC6D26" FromRole="Form_Data" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Form_Data__UserC__300424B4" FromRole="Form_Data" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK__Form_Data__UserS__30F848ED" FromRole="Form_Data" ToRole="State" />
+  </EntityType>
+  <EntityType Name="ImageTable">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__ImageTabl__UserI__4E88ABD4" FromRole="ImageTable" ToRole="User" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK__City__StateID__2D27B809" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__State__CountryID__29572725" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Form_Data" Relationship="Self.FK__Form_Data__UserS__30F848ED" FromRole="State" ToRole="Form_Data" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="User_Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_Role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ImageTable" Relationship="Self.FK__ImageTabl__UserI__4E88ABD4" FromRole="User" ToRole="ImageTable" />
+    <NavigationProperty Name="UserOrder" Relationship="SchoolManagement_YV331Model.FK__UserOrder__UserI__6383C8BA" FromRole="User" ToRole="UserOrder" />
+  </EntityType>
+  <Association Name="FK__City__CountryID__2C3393D0">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__StateID__2D27B809">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Form_Data__UserC__31EC6D26">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Form_Data" Type="Self.Form_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Form_Data">
+        <PropertyRef Name="UserCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Form_Data__UserC__300424B4">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Form_Data" Type="Self.Form_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Form_Data">
+        <PropertyRef Name="UserCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__CountryID__29572725">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Form_Data__UserS__30F848ED">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="Form_Data" Type="Self.Form_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Form_Data">
+        <PropertyRef Name="UserState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImageTabl__UserI__4E88ABD4">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ImageTable" Type="Self.ImageTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ImageTable">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SchoolManagement_YV331Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Form_Data" EntityType="Self.Form_Data" />
+    <EntitySet Name="ImageTable" EntityType="Self.ImageTable" />
+    <EntitySet Name="State" EntityType="Self.State" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK__City__CountryID__2C3393D0" Association="Self.FK__City__CountryID__2C3393D0">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__StateID__2D27B809" Association="Self.FK__City__StateID__2D27B809">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Form_Data__UserC__31EC6D26" Association="Self.FK__Form_Data__UserC__31EC6D26">
+      <End Role="City" EntitySet="City" />
+      <End Role="Form_Data" EntitySet="Form_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Form_Data__UserC__300424B4" Association="Self.FK__Form_Data__UserC__300424B4">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Form_Data" EntitySet="Form_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__CountryID__29572725" Association="Self.FK__State__CountryID__29572725">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Form_Data__UserS__30F848ED" Association="Self.FK__Form_Data__UserS__30F848ED">
+      <End Role="State" EntitySet="State" />
+      <End Role="Form_Data" EntitySet="Form_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImageTabl__UserI__4E88ABD4" Association="Self.FK__ImageTabl__UserI__4E88ABD4">
+      <End Role="User" EntitySet="User" />
+      <End Role="ImageTable" EntitySet="ImageTable" />
+    </AssociationSet>
+    <FunctionImport Name="GETALLSTATES" ReturnType="Collection(SchoolManagement_YV331Model.GETALLSTATES_Result)" />
+    <FunctionImport Name="Sp_AddEdit_City">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CityName" Mode="In" Type="String" />
+      <Parameter Name="stateID" Mode="In" Type="Int32" />
+      <Parameter Name="CountryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_AddEdit_Country">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CountryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_AddEdit_Data">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="ContactNumber" Mode="In" Type="String" />
+      <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="ADDRESS" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="Int32" />
+      <Parameter Name="State" Mode="In" Type="Int32" />
+      <Parameter Name="City" Mode="In" Type="Int32" />
+      <Parameter Name="PostalCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_AddEdit_State">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="StateName" Mode="In" Type="String" />
+      <Parameter Name="CountryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Delete_City">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Delete_Country">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Delete_Data">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Delete_State">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CouponType" EntityType="SchoolManagement_YV331Model.CouponType" />
+    <EntitySet Name="ItemDetails" EntityType="SchoolManagement_YV331Model.ItemDetails" />
+    <EntitySet Name="TableCouponCodeMaster" EntityType="SchoolManagement_YV331Model.TableCouponCodeMaster" />
+    <EntitySet Name="TableItemMaster" EntityType="SchoolManagement_YV331Model.TableItemMaster" />
+    <EntitySet Name="UserOrder" EntityType="SchoolManagement_YV331Model.UserOrder" />
+    <AssociationSet Name="FK__TableCoup__Coupo__60A75C0F" Association="SchoolManagement_YV331Model.FK__TableCoup__Coupo__60A75C0F">
+      <End Role="CouponType" EntitySet="CouponType" />
+      <End Role="TableCouponCodeMaster" EntitySet="TableCouponCodeMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ItemDetai__ORDER__66603565" Association="SchoolManagement_YV331Model.FK__ItemDetai__ORDER__66603565">
+      <End Role="UserOrder" EntitySet="UserOrder" />
+      <End Role="ItemDetails" EntitySet="ItemDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserOrder__UserI__6383C8BA" Association="SchoolManagement_YV331Model.FK__UserOrder__UserI__6383C8BA">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserOrder" EntitySet="UserOrder" />
+    </AssociationSet>
+    <FunctionImport Name="GET_ITEM_BY_USERID" ReturnType="Collection(SchoolManagement_YV331Model.GET_ITEM_BY_USERID_Result)">
+      <Parameter Name="USERID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GETALLSTATES_Result">
+    <Property Type="Int32" Name="StateID" Nullable="false" />
+    <Property Type="String" Name="StateName" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="CountryID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="CouponType">
+    <Key>
+      <PropertyRef Name="CouponID" />
+    </Key>
+    <Property Name="CouponID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Coupon_Type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TableCouponCodeMaster" Relationship="SchoolManagement_YV331Model.FK__TableCoup__Coupo__60A75C0F" FromRole="CouponType" ToRole="TableCouponCodeMaster" />
+  </EntityType>
+  <EntityType Name="ItemDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ITEM_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_QTY" Type="Int32" />
+    <Property Name="ITEM_PRICE" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ORDERID" Type="Int32" />
+    <NavigationProperty Name="UserOrder" Relationship="SchoolManagement_YV331Model.FK__ItemDetai__ORDER__66603565" FromRole="ItemDetails" ToRole="UserOrder" />
+  </EntityType>
+  <EntityType Name="TableCouponCodeMaster">
+    <Key>
+      <PropertyRef Name="CouponICoded" />
+    </Key>
+    <Property Name="CouponICoded" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CouponType" Type="Int32" />
+    <Property Name="Flat_Amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Percentage" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="UsageLimit" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="CouponType1" Relationship="SchoolManagement_YV331Model.FK__TableCoup__Coupo__60A75C0F" FromRole="TableCouponCodeMaster" ToRole="CouponType" />
+  </EntityType>
+  <EntityType Name="TableItemMaster">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Item_Amount" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="UserOrder">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_Date" Type="DateTime" Precision="0" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Total_Qty" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="AFTER_GST" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PROMO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL_PAYABLE" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="ItemDetails" Relationship="SchoolManagement_YV331Model.FK__ItemDetai__ORDER__66603565" FromRole="UserOrder" ToRole="ItemDetails" />
+    <NavigationProperty Name="User" Relationship="SchoolManagement_YV331Model.FK__UserOrder__UserI__6383C8BA" FromRole="UserOrder" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__TableCoup__Coupo__60A75C0F">
+    <End Type="SchoolManagement_YV331Model.CouponType" Role="CouponType" Multiplicity="0..1" />
+    <End Type="SchoolManagement_YV331Model.TableCouponCodeMaster" Role="TableCouponCodeMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CouponType">
+        <PropertyRef Name="CouponID" />
+      </Principal>
+      <Dependent Role="TableCouponCodeMaster">
+        <PropertyRef Name="CouponType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ItemDetai__ORDER__66603565">
+    <End Type="SchoolManagement_YV331Model.UserOrder" Role="UserOrder" Multiplicity="0..1" />
+    <End Type="SchoolManagement_YV331Model.ItemDetails" Role="ItemDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserOrder">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="ItemDetails">
+        <PropertyRef Name="ORDERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserOrder__UserI__6383C8BA">
+    <End Type="SchoolManagement_YV331Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="SchoolManagement_YV331Model.UserOrder" Role="UserOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserOrder">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GET_ITEM_BY_USERID_Result">
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
+    <Property Type="DateTime" Name="Order_Date" Nullable="true" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="Total_Qty" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="AFTER_GST" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="String" Name="PROMO" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="TOTAL_PAYABLE" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ITEM_NAME" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="ITEM_QTY" Nullable="true" />
+    <Property Type="Decimal" Name="ITEM_PRICE" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="ORDERID1" Nullable="true" />
+  </ComplexType>
+</Schema>
