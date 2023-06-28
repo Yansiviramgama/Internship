@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zbz/y2REHlvKiqW4obQK7i+BIszb7STJ4+YLmUbJFr/r/NAF9dy9xnq6qOOP24zZPFN/SEKHdrpueQoVqrr/AA==",
+  "success": true,
+  "projectFilePath": "C:\\yansi\\.net core\\SMS_System\\SMS_System.Model\\SMS_System.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

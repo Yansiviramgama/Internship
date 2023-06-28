@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SMS_System.Model.ViewModel.StateModel>
+
+@{
+    ViewData["Title"] = "StateList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="toast" style="background-color:#EB212E;"><div id="img">@@</div><div id="desc">@TempData["Error"]</div></div>
+<div class="card shadow mb-4">
+    <!-- Card Header - Accordion -->
+    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+        <h3 class="m-0 font-weight-bold text-primary text-center">State List</h3>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse show" id="collapseCardExample">
+        <div class="card-body">
+            <div class="col-12">
+                <table class="datatable table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>State Id</th>
+                            <th>State Name</th>
+                            <th>Country Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabledataincountrylist">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.StateId</td>
+                                <td>@item.StateName</td>
+                                <td>@item.CountryName</td>
+                                <td>
+                                    <a href="/State/AddEditState/@item.StateId" class="btn btn-outline-info">Edit</a>
+                                    &nbsp;&nbsp;
+                                    <a class="btn btn-outline-danger" data-toggle="modal" data-target="#DeleteModal+@item.StateId">Delete</a>
+                                    <div class="modal fade" id="DeleteModal+@item.StateId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to Delete this?</h5>
+                                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                    <a class="btn btn-primary" href="/Country/DeleteCountry/@item.CountryId">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>                          
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

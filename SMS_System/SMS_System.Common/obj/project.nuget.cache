@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "LGKMijk4RzSP2YhFSTkcZ/nTHDA6WiSNqUWI3bJvgCAf9hDTVQmaXqiV5Jdttw2iIjbvClfmssIIPKLetgP08w==",
+  "success": true,
+  "projectFilePath": "C:\\yansi\\.net core\\SMS_System\\SMS_System.Common\\SMS_System.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,146 @@
+﻿@model IEnumerable<SMS_System.Model.ViewModel.CountryModel>
+@{
+    ViewData["Title"] = "CountryList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="toast" style="background-color:#EB212E;"><div id="img">@@</div><div id="desc">@TempData["Error"]</div></div>
+<div class="card shadow mb-4">
+	<!-- Card Header - Accordion -->
+	<a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+		<h3 class="m-0 font-weight-bold text-primary text-center">Country List</h3>
+	</a>
+	<!-- Card Content - Collapse -->
+	<div class="collapse show" id="collapseCardExample">
+		<div class="card-body">
+		@*<div class="col-2 pb-3 d-flex">
+				<span class="pt-2">Show</span>
+				<div class="px-2">
+					<select class="form-control" id="pagesizeDropDown">
+						<option value="10">10</option>
+						<option value="25">25</option>
+						<option value="50">50</option>
+						<option value="100">100</option>
+					</select>
+				</div>
+				<span class="pt-2">entries</span>
+			</div>*@
+			<div class="col-12">
+				<table class="datatable table table-bordered">
+					<thead>
+						<tr>
+							<th>Country Id</th>
+							<th>Country Name</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="tabledataincountrylist">
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.CountryId</td>
+								<td>@item.CountryName</td>
+								<td>
+									<a href="/Country/AddEditCountry/@item.CountryId" class="btn btn-outline-info">Edit</a>
+									&nbsp;&nbsp;
+									<a class="btn btn-outline-danger" href="#" data-toggle="modal" data-target="#logoutModal@(item.CountryId)">
+										Delete
+									</a>
+									<div class="modal fade" id="logoutModal@(item.CountryId)" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+										 aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel">Are you sure you want to Delete it?</h5>
+													<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+												</div>
+												<div class="modal-footer">
+													<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+													<a class="btn btn-primary" href="/Country/DeleteCountry/@item.CountryId">Delete</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</td>
+							</tr>							
+						}											
+					</tbody>
+				</table>				
+			</div>
+			@*<div>
+				<div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+					<ul class="pagination">
+						<li class="paginate_button page-item previous" id="dataTable_previous">
+							<a class="page-link">Previous</a>
+						</li>
+						{
+							int count = 1;
+							for (int i = 0; i < (int)ViewBag.CountryCount; i++)
+							{
+								<li class="paginate_button page-item">
+									<a class="page-link">@count</a>
+								</li>
+								count++;
+							}
+						}
+						<li class="paginate_button page-item next" id="dataTable_next">
+							<a class="page-link">Next</a>
+						</li>
+					</ul>
+				</div>
+			</div>*@
+		</div>
+	</div>
+</div>
+
+@{
+	if (TempData["Error"] != null)
+	{
+		<script>
+			var x = document.getElementById("toast")
+			x.className = "show";
+			setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
+		</script>
+	}
+}
+@*<script>
+	$(document).ready(function () {
+		$('.page-item').click(function () {
+			var pagenum = parseInt($(this).children().text());
+			var pagesize = parseInt($('#pagesizeDropDown').val());
+			$('#tabledataincountrylist').empty();
+			var pagenumber = pagenum == 0 ? pagenum = 1 : pagenum
+
+			var pagination = {}
+			pagination.pagenumber = pagenumber
+			pagination.pagesize = pagesize
+
+			$.ajax({
+				method: 'GET',
+				url: `/Country/GetCoutriesPerPage/${pagination}`,
+				data: pagination,
+				success: function (res) {
+					var data = JSON.parse(res);
+					console.log('success')
+					data.forEach(ele => {
+						console.log(ele)
+						$('#tabledataincountrylist').append(`<tr>
+												<td>${ele.Id}</td>
+												<td>${ele.CountryName}</td>
+												<td><a href="/Country/EditCountry/${ele.Id}" class="btn btn-outline-info">Edit</a>
+													<a href="/Country/DeleteCountry/${ele.Id}" class="btn btn-outline-danger">Delete</a>
+												</td>
+												</tr>`)
+					})
+				},
+				error: function (err) {
+					console.log(err)
+					console.log('failed')
+				}
+			})
+		})
+	})
+</script>
+*@

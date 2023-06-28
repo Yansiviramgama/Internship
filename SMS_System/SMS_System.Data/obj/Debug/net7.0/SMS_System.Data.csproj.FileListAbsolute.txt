@@ -1,0 +1,17 @@
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Data.deps.json
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Data.dll
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Data.pdb
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Common.dll
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Model.dll
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Common.pdb
+C:\yansi\.net core\SMS_System\SMS_System.Data\bin\Debug\net7.0\SMS_System.Model.pdb
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.csproj.AssemblyReference.cache
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.AssemblyInfoInputs.cache
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.AssemblyInfo.cs
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.csproj.CoreCompileInputs.cache
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.csproj.CopyComplete
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.dll
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\refint\SMS_System.Data.dll
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\SMS_System.Data.pdb
+C:\yansi\.net core\SMS_System\SMS_System.Data\obj\Debug\net7.0\ref\SMS_System.Data.dll
