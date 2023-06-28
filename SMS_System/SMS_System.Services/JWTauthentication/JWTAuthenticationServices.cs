@@ -10,13 +10,14 @@ namespace SMS_System.Services.JWTauthentication
     public class JWTAuthenticationServices : IJWTAuthenticationServices
     {
       
-            public string GenerateToken(string EmailAddress, string SecretKey, double JWT_Validity_Mins)
+            public string GenerateToken(string EmailAddress,string UserId, string SecretKey, double JWT_Validity_Mins)
             {
                 SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                    new Claim("EmailAddress",EmailAddress)                   
+                    new Claim("EmailAddress",EmailAddress) ,
+                    new Claim ("UserID",UserId)
                     }),
                     Expires = DateTime.Now.AddMinutes(JWT_Validity_Mins),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey)), SecurityAlgorithms.HmacSha256Signature)
@@ -36,7 +37,7 @@ namespace SMS_System.Services.JWTauthentication
 
             DateTime tokenGeneratedOnUTC = DateTime.UtcNow;
             int tokenValidityInMins = JWTValidityMinutes;
-            DateTime tokenExpiresOnUTC = tokenGeneratedOnUTC.AddMinutes(tokenValidityInMins);
+            DateTime tokenExpiresOnUTC = tokenGeneratedOnUTC.AddDays(tokenValidityInMins);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -62,7 +63,7 @@ namespace SMS_System.Services.JWTauthentication
 
         public UserTokenModel GetUserTokenData(string jwtToken)
         {
-            UserTokenModel userTokenData = null;
+            UserTokenModel userTokenData = new UserTokenModel();
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             JwtSecurityToken securityToken = (JwtSecurityToken)tokenHandler.ReadToken(jwtToken);
             IEnumerable<Claim> claims = securityToken.Claims;
@@ -71,7 +72,10 @@ namespace SMS_System.Services.JWTauthentication
             {
                 var claimData = claims.ToList().FirstOrDefault().Value;
                 userTokenData = JsonConvert.DeserializeObject<UserTokenModel>(claimData);
-                userTokenData.TokenValidTo = securityToken.ValidTo;
+                //userTokenData.UserId = Convert.ToInt32(claimData[1].Value);
+                //userTokenData.EmailId = claims.ToList().FirstOrDefault().Value;
+                
+				userTokenData.TokenValidTo = securityToken.ValidTo;
             }
             return userTokenData;
         }

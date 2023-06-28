@@ -8,7 +8,7 @@ namespace SMS_System.Model.ViewModel
 {
     public class UserTokenModel
     {
-        public long UserId { get; set; }
+        public int UserId { get; set; }
         public DateTime TokenValidTo { get; set; }
         public string EmailId { get; set; }
         public string UserName { get; set; }

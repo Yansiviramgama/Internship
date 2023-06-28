@@ -8,7 +8,7 @@ namespace SMS_System.Data.DbRepository.UserLogin
         Task<int> RegisterUser(UserDataModel user);
         Task<UserDataModel> CheckUser(UserDataModel userinfo);
         Task<ForgotDetails> GetUserDetailsByEmail(ForgotDetails user);
-        Task<long> ValidateUserTokenData(long UserId, string jwtToken, DateTime TokenValidDate);   
+        Task<int> ValidateUserTokenData(int UserId, string jwtToken, DateTime TokenValidDate);   
         Task<long> UpdateLoginToken(string Token, long UserId);
     }
 }

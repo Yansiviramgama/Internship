@@ -39,7 +39,7 @@ namespace SMS_System.Services.UserLogin
             return await Services.UpdateLoginToken(Token, UserId);
         }
 
-        public async Task<long> ValidateUserTokenData(long UserId, string jwtToken, DateTime TokenValidDate)
+        public async Task<int> ValidateUserTokenData(int UserId, string jwtToken, DateTime TokenValidDate)
         {
             return await Services.ValidateUserTokenData(UserId, jwtToken, TokenValidDate);
         }

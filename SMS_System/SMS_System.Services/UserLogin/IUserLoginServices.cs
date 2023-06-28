@@ -6,7 +6,7 @@ namespace SMS_System.Services.UserLogin
     {
         Task<UserDataModel> LoginDetails(LoginCustomModel login);
         Task<int> RegisterUser(UserDataModel user);
-        Task<long> ValidateUserTokenData(long UserId, string jwtToken, DateTime TokenValidDate);
+        Task<int> ValidateUserTokenData(int UserId, string jwtToken, DateTime TokenValidDate);
         Task<long> UpdateLoginToken(string Token, long UserId);
         Task<UserDataModel> CheckUser(UserDataModel userinfo);
         Task<ForgotDetails> GetUserDetailsByEmail(ForgotDetails user);

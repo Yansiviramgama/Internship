@@ -50,10 +50,11 @@ namespace SMS_System.Controllers
                         objTokenData.UserName = user.User_Name;
                         AccessTokenModel objAccessTokenData = new AccessTokenModel();
                         objAccessTokenData = _jwtAuthenticationServices.GenerateTokenModel(objTokenData, _appSettings.JWTSecretKey, _appSettings.JWTValidityMinutes);
-                        await _userLoginServices.UpdateLoginToken(objAccessTokenData.Token, objAccessTokenData.UserId);
+                        var data = await _userLoginServices.UpdateLoginToken(objAccessTokenData.Token, objAccessTokenData.UserId);
                         string secretkey = _appSettings.JWTSecretKey;
                         int JWTTime = _appSettings.JWTValidityMinutes;
-                        string JWTToken = _jwtAuthenticationServices.GenerateToken(user.User_Email, secretkey, JWTTime);
+                        //string JWTToken = _jwtAuthenticationServices.GenerateToken(user.User_Email,Convert.ToString(user.UserID), secretkey, JWTTime);
+                        string JWTToken = objAccessTokenData.Token;
                         HttpContext.Session.SetString("_token", JWTToken);
                         HttpContext.Session.SetString("_Useremail", user.User_Email);
                         var checkstoredsession = HttpContext.Session.GetString("_token");

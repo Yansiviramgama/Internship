@@ -47,7 +47,8 @@ namespace SMS_System.Data.DbRepository.UserLogin
             parameter.Add("@User_Name", user.User_Name);
             parameter.Add("@User_Email", user.User_Email);
             parameter.Add("@User_Password", user.User_Password);
-            return await ExecuteAsync<int>(StoreProcedure.UserInfo,parameter,commandType:CommandType.StoredProcedure);
+            var data = await ExecuteAsync<int>(StoreProcedure.UserInfo,parameter,commandType:CommandType.StoredProcedure);
+            return data;
         }
 
         public async Task<long> UpdateLoginToken(string Token, long UserId)
@@ -57,7 +58,8 @@ namespace SMS_System.Data.DbRepository.UserLogin
                 var param = new DynamicParameters();
                 param.Add("@Token", Token);
                 param.Add("@UserId", UserId);
-                return await QueryFirstOrDefaultAsync<long>(StoreProcedure.UpdateLoginToken, param, commandType: CommandType.StoredProcedure);
+               var data  =  await ExecuteAsync<long>(StoreProcedure.UpdateLoginToken, param, commandType: CommandType.StoredProcedure);
+                return data;
             }
             catch (Exception)
             {
@@ -65,15 +67,16 @@ namespace SMS_System.Data.DbRepository.UserLogin
             }
         }
 
-        public async Task<long> ValidateUserTokenData(long UserId, string jwtToken, DateTime TokenValidDate)
+        public async Task<int> ValidateUserTokenData(int UserId, string jwtToken, DateTime TokenValidDate)
         {
             try
             {
                 var param = new DynamicParameters();
-                param.Add("@UserId", UserId);
+                param.Add("@UserId", Convert.ToInt32(UserId));
                 param.Add("@Token", jwtToken);
-                param.Add("@ValidateDate", TokenValidDate.ToString("yyyy-MM-dd HH:mm:ss.fff"));
-                return await QueryFirstOrDefaultAsync<long>(StoreProcedure.ValidateTokenDate, param, commandType: CommandType.StoredProcedure);
+                param.Add("@ValidateDate", TokenValidDate.ToString("MM/dd/yyyy"));
+                var data = await QueryFirstOrDefaultAsync<int>(StoreProcedure.ValidateTokenDate, param, commandType: CommandType.StoredProcedure);
+                return data;
             }
             catch (Exception)
             {

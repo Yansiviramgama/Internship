@@ -57,7 +57,7 @@ namespace SMS_System.MiddelWare
                 // Delete files from folder for logs of request and response older than 7 days.
                 DeleteOldReqResLogFiles();
                 // Check JWT Token validity expiry
-                string jwtToken = context.Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+                string jwtToken = context.Session.GetString("_token");
                 if (!string.IsNullOrEmpty(jwtToken))
                 {
                     UserTokenModel userTokenModel = _jwtAuthenticationService.GetUserTokenData(jwtToken);
