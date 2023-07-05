@@ -1,0 +1,271 @@
+﻿@model IEnumerable<Yansi_KalmTraining.Model.Viewmodel.CompanyModel>
+
+@{
+    ViewData["Title"] = "CompanyDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .datatable {
+        color: white !important
+    }
+
+    .colortext table, th, td {
+        color: white !important
+    }
+</style>
+@if (TempData["Success"] != null)
+    {
+    <div id="toast" style="background-color:wheat;"><div id="img">@@</div><div id="desc">@TempData["Success"]</div></div>
+    }
+
+<h3 class="colortext text-center">CompanyDetails</h3>
+<div class=" text-center">
+    <a href="/Company/CompanyList" class="btn btn-outline-light">Add Company</a>
+</div>
+<div class="container p-3 mt-4 bg-dark">
+    <div class="container colortext mt-3">
+        <table class="table bg-dark datatable">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        CompanyName
+                    </th>
+                    <th>
+                        CountryName
+                    </th>
+                    <th>
+                        CityName
+                    </th>
+                    <th>
+                        PostCode
+                    </th>
+                    <th>
+                        Tools
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+@{
+    if (TempData["Success"] != null)
+    {
+        <script>
+            var x = document.getElementById("toast")
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
+        </script>
+    }
+}
+@*For Card View*@
+
+@*
+<div class="mdl-grid mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+    <!-- Card1 -->
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone">
+        <div class="mdl-card mdl-shadow--2dp">
+            @foreach (var item in Model)
+            {
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">London</h2>
+                </div>
+                <div class="mdl-card__supporting-text mdl-card--expand">
+                    <img src="~/companylogo/download.jpg" alt="Avatar"
+                         style="width: 50%; height: 50%;border-radius: 100%;margin-left: 30%;padding: 10px;">
+                    <div class="mdl-typography--text-center">
+                        <p>Satva Softech</p>
+                        <p>India</p>
+                    </div>
+                </div>
+
+                <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="Card1">
+                        <i class="material-icons">more_vert</i>
+                    </button>
+                    <div class="mdl-menu__container is-upgraded"
+                         style="right: 20px; top: 48px; width: 135px; height: 160px;" id="abc">
+                        <div class="mdl-menu__outline mdl-menu--bottom-right"
+                             style="width: 135px;height: 110px;"></div>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown mdl-js-ripple-effect--ignore-events"
+                            for="more" data-upgraded=",MaterialMenu,MaterialRipple"
+                            style="clip: rect(0px, 135px, 160px, 0px);">
+                            <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                                data-upgraded=",MaterialRipple" style="transition-delay: 0.012s;">
+                                Settings
+                                <span class="mdl-menu__item-ripple-container">
+                                    <span class="mdl-ripple"></span>
+                                </span>
+                            </li>
+                            <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                                data-upgraded=",MaterialRipple" style="transition-delay: 0.156s;">
+                                F.A.Q.
+                                <span class="mdl-menu__item-ripple-container">
+                                    <span class="mdl-ripple"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- Card2 -->
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">London</h2>
+            </div>
+            <div class="mdl-card__supporting-text mdl-card--expand">
+                <img src="~/companylogo/shaligraminfotech.jpg" alt="Avatar"
+                     style="width: 50%; height: 50%;border-radius: 100%;margin-left: 30%;padding: 10px;">
+                <div class="mdl-typography--text-center">
+                    <p>Satva Softech</p>
+                    <p>India</p>
+                </div>
+            </div>
+
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <div class="mdl-menu__container is-upgraded"
+                     style="right: 20px; top: 48px; width: 135px; height: 160px;">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"
+                         style="width: 135px;height: 110px;"></div>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown mdl-js-ripple-effect--ignore-events"
+                        for="more" data-upgraded=",MaterialMenu,MaterialRipple"
+                        style="clip: rect(0px, 135px, 160px, 0px);">
+                        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                            data-upgraded=",MaterialRipple" style="transition-delay: 0.012s;">
+                            Settings
+                            <span class="mdl-menu__item-ripple-container">
+                                <span class="mdl-ripple"></span>
+                            </span>
+                        </li>
+                        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                            data-upgraded=",MaterialRipple" style="transition-delay: 0.156s;">
+                            F.A.Q.
+                            <span class="mdl-menu__item-ripple-container">
+                                <span class="mdl-ripple"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card3 -->
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">London</h2>
+            </div>
+            <div class="mdl-card__supporting-text mdl-card--expand">
+                <img src="~/companylogo/tridhya.jpg" alt="Avatar"
+                     style="width: 50%; height: 50%;border-radius: 100%;margin-left: 30%;padding: 10px;">
+                <div class="mdl-typography--text-center">
+                    <p>Satva Softech</p>
+                    <p>India</p>
+                </div>
+            </div>
+
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <div class="mdl-menu__container is-upgraded"
+                     style="right: 20px; top: 48px; width: 135px; height: 160px;">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"
+                         style="width: 135px;height: 110px;"></div>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown mdl-js-ripple-effect--ignore-events"
+                        for="more" data-upgraded=",MaterialMenu,MaterialRipple"
+                        style="clip: rect(0px, 135px, 160px, 0px);">
+                        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                            data-upgraded=",MaterialRipple" style="transition-delay: 0.012s;">
+                            Settings
+                            <span class="mdl-menu__item-ripple-container">
+                                <span class="mdl-ripple"></span>
+                            </span>
+                        </li>
+                        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                            data-upgraded=",MaterialRipple" style="transition-delay: 0.156s;">
+                            F.A.Q.
+                            <span class="mdl-menu__item-ripple-container">
+                                <span class="mdl-ripple"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card4 -->
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">London</h2>
+            </div>
+            <div class="mdl-card__supporting-text mdl-card--expand">
+                <img src="~/companylogo/infosys.png" alt="Avatar"
+                     style="width: 50%; height: 50%;border-radius: 100%;margin-left: 30%;padding: 10px;">
+                <div class="mdl-typography--text-center">
+                    <p>Satva Softech</p>
+                    <p>India</p>
+                </div>
+            </div>
+
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <div class="mdl-menu__container is-upgraded"
+                     style="right: 20px; top: 48px; width: 135px; height: 160px;">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"
+                         style="width: 135px;height: 110px;"></div>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown mdl-js-ripple-effect--ignore-events"
+                        for="more" data-upgraded=",MaterialMenu,MaterialRipple"
+                        style="clip: rect(0px, 135px, 160px, 0px);">
+                        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                            data-upgraded=",MaterialRipple" style="transition-delay: 0.012s;">
+                            Settings
+                            <span class="mdl-menu__item-ripple-container">
+                                <span class="mdl-ripple"></span>
+                            </span>
+                        </li>
+                        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1"
+                            data-upgraded=",MaterialRipple" style="transition-delay: 0.156s;">
+                            F.A.Q.
+                            <span class="mdl-menu__item-ripple-container">
+                                <span class="mdl-ripple"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#Card1").click(function () {
+            if ($("#abc").hasClass("is-visible")) {
+                $("#abc").removeClass("is-visible");
+            }
+            else {
+                $("#abc").addClass("is-visible");
+            }
+        });
+
+    })
+</script>*@
+
+
+
+

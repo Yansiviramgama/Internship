@@ -1,0 +1,17 @@
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Services.deps.json
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Services.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Services.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Data.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Model.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Data.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\bin\Debug\net7.0\Yansi_KalmTraining.Model.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.csproj.AssemblyReference.cache
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.AssemblyInfoInputs.cache
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.AssemblyInfo.cs
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.csproj.CoreCompileInputs.cache
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.csproj.CopyComplete
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\refint\Yansi_KalmTraining.Services.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\Yansi_KalmTraining.Services.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Services\obj\Debug\net7.0\ref\Yansi_KalmTraining.Services.dll

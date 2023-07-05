@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "52gYIDs3wAST820KJLSo2w3GzhNtVkOyqa+RAwcxC5SmGZVkI1XCNQX8D+PO9CZwxmo6AeNEwgjbX4G+iyv+Ug==",
+  "success": true,
+  "projectFilePath": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining.Model\\Yansi_KalmTraining.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\sit334\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

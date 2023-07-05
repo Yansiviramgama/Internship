@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Yansi_KalmTraining.Model.Viewmodel.OTPModel
+@{
+    Layout = "~/Views/Shared/UserPanelLayout.cshtml";
+}
+<main class="mdl-layout__content">
+    <div class="mdl-card mdl-card__login mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text color--dark-gray">
+            <div class="mdl-grid">
+                @using (Html.BeginForm("AddOTP", "Login", FormMethod.Post))
+                {
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone submit-cell">
+
+                        <a href="/Login/ForgotPassword" class="login-link">
+                            Back To Forgot Password
+                        </a>
+
+                    </div>
+                    
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <span class="mdl-card__title-text text-color--smooth-gray">DARKBOARD</span>
+                    </div>
+                    if (TempData["Error"] != null)
+                    {
+                        <p class="text-danger">@TempData["Error"] </p>
+                    }
+
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <span class="login-name text-color--white">Forgot password?</span>
+                        <span class="login-secondary-text text-color--smoke">Enter OTP For Email Verification</span>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label class="mdl-textfield__label" for="OTP">OTP</label>
+                            @Html.TextBoxFor(x => x.OTP, "", new { @class = "mdl-textfield__input",type="number", id = "e-mail" })
+                            @Html.ValidationMessageFor(x => x.OTP, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone submit-cell">
+                        <div class="mdl-layout-spacer"></div>
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised color--light-blue">
+                            SUBMIT OTP
+                        </button>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</main>
+
+

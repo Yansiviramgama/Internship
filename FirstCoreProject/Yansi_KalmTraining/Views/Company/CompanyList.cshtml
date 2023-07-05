@@ -1,0 +1,97 @@
+﻿@model Yansi_KalmTraining.Model.Viewmodel.CompanyModel
+
+@{
+    ViewData["Title"] = "CompanyList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    select,input {
+        background-color : darkgray !important;
+        color: White !important;
+    }
+</style>
+<div class="mdl-grid mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone form__article">
+    </div>
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h5 class="mdl-card__title-text text-color--white">PROFILE INFO</h5>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <form class="form form--basic" asp-action="CompanyList" enctype="multipart/form-data">
+                    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone form__article">
+
+                        <input asp-for="Id" type="hidden" />
+                        <div class="input-box address">
+                            @if (TempData["Image"] != null)
+                            {
+                                <img src="~/companylogo/@TempData["Image"]" style=" width:80px;height:80px;border-radius: 50%;" />
+                            }
+                            else
+                            {
+                                <img src="~/companylogo/@Model.Image" style="width:80px;height:80px;border-radius: 50%;" />
+                            }
+                            <input type="file" name="file" class="form-control-file" />
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select full-size">
+                            <select asp-for="CompanyID" class="form-control" asp-items="@ViewBag.CompanyList">
+                                <option selected>--Select Company--</option>
+                            </select>
+                            <span asp-validation-for="CompanyID" class="text-danger"></span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select full-size">
+                            <select asp-for="CountryID" class="form-control" asp-items="@ViewBag.CountryList">
+                                <option selected>--Select Country--</option>
+                            </select>
+
+                            <span asp-validation-for="CountryID" class="text-danger"></span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label asp-for="Cityname" class="mdl-textfield__label" for="profile-floating-last-name">City Name</label>
+                            <input asp-for="Cityname" class="mdl-textfield__input" type="text" id="profile-floating-last-name" />
+                            <span asp-validation-for="Cityname" class="text-danger"></span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                            <label asp-for="PostCode" class="mdl-textfield__label" for="floating-e-mail">Post Code</label>
+                            <input asp-for="PostCode" class="mdl-textfield__input" type="text" id="profile-floating-e-mail" />
+                            <span asp-validation-for="PostCode" class="text-danger"></span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select full-size">
+                            <div class="mdl-list__item">
+                                <div class="gender">
+                                    @Html.RadioButtonFor(x => x.Tool, "Change Matrix", new { @class = "input", id = "check-one", name = "tools" })
+                                    <label for="check-one">Change Matrix</label>
+                                </div>
+                                <div class="gender">
+                                    @Html.RadioButtonFor(x => x.Tool, "Training Analysis", new { @class = "input", id = "check-two", name = "tools" })
+                                    <label for="check-two">Training Analysis</label>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Tool" class="text-danger"></span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select full-size">
+                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue">
+                                ADD
+                            </button>
+                            @* <button type="submit" class="mdl-button mdl-js-button mdl-button--raised button--colored-light-blue"
+                            disabled>
+                            Save Changes
+                            </button>*@
+                        </div>
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone form__article">
+    </div>
+</div>
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

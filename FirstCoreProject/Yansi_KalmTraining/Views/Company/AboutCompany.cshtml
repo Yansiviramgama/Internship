@@ -1,0 +1,58 @@
+﻿@model Yansi_KalmTraining.Model.Viewmodel.CompanyModel
+
+@{
+    ViewData["Title"] = "AboutCompany";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    select {
+        background-color: dimgray !important;
+        color: White !important;
+    }
+</style>
+<div class="mdl-grid mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone form__article">
+    </div>
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h5 class="mdl-card__title-text text-color--white">PROFILE INFO</h5>
+            </div>
+            <div class="mdl-card__supporting-text">                
+                    <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone form__article">
+                        <input asp-for="Id" type="hidden" />
+                        <div class="input-box address">
+                            <div class="profile-image color--smooth-gray profile-image--round">
+                                @if (TempData["Image"] != null)
+                                {
+                                    <img src="~/companylogo/@TempData["Image"]" />
+                                }
+                                else
+                                {
+                                <img src="~/companylogo/@Model.Image" style=" width:80px;height:80px;border-radius: 50%;" />
+                                }
+                            </div>                           
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                           <h5>Company Name -> @Model.CompanyName</h5>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                        <h5>City Name -> @Model.Cityname</h5>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                        <h5>Country Name -> @Model.CountryName</h5>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                        <h5>Post Code -> @Model.PostCode</h5>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select full-size">
+                        <h5>Selected Tool -> @Model.Tool</h5>
+                        </div>                      
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone form__article">
+    </div>
+</div>

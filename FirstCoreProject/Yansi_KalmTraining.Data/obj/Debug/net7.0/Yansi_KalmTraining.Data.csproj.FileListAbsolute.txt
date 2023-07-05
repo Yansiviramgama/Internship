@@ -1,0 +1,15 @@
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\bin\Debug\net7.0\Yansi_KalmTraining.Data.deps.json
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\bin\Debug\net7.0\Yansi_KalmTraining.Data.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\bin\Debug\net7.0\Yansi_KalmTraining.Data.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\bin\Debug\net7.0\Yansi_KalmTraining.Model.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\bin\Debug\net7.0\Yansi_KalmTraining.Model.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.csproj.AssemblyReference.cache
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.AssemblyInfoInputs.cache
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.AssemblyInfo.cs
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.csproj.CoreCompileInputs.cache
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.csproj.CopyComplete
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\refint\Yansi_KalmTraining.Data.dll
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\Yansi_KalmTraining.Data.pdb
+C:\yansi\.net core\Yansi_KalmTraining\Yansi_KalmTraining.Data\obj\Debug\net7.0\ref\Yansi_KalmTraining.Data.dll

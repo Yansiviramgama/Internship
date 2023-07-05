@@ -1,0 +1,525 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Yansi_KalmTraining.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Yansi_KalmTraining.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\17004.png",
+      "PackagePath": "staticwebassets\\CompanyLogo\\17004.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\Infosys.png",
+      "PackagePath": "staticwebassets\\CompanyLogo\\Infosys.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\ShaligramInfotech.jpg",
+      "PackagePath": "staticwebassets\\CompanyLogo\\ShaligramInfotech.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\Tcs.png",
+      "PackagePath": "staticwebassets\\CompanyLogo\\Tcs.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\Tridhya.jpg",
+      "PackagePath": "staticwebassets\\CompanyLogo\\Tridhya.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\download.jpg",
+      "PackagePath": "staticwebassets\\CompanyLogo\\download.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\CompanyLogo\\profile-icon-design-free-vector.jpg",
+      "PackagePath": "staticwebassets\\CompanyLogo\\profile-icon-design-free-vector.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ExceptionLogs\\Exception_03_07_2023.txt",
+      "PackagePath": "staticwebassets\\ExceptionLogs\\Exception_03_07_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ExceptionLogs\\Exception_04_07_2023.txt",
+      "PackagePath": "staticwebassets\\ExceptionLogs\\Exception_04_07_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ExceptionLogs\\Exception_05_07_2023.txt",
+      "PackagePath": "staticwebassets\\ExceptionLogs\\Exception_05_07_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ReqResLogs\\ReqResLog_03_07_2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\ReqResLog_03_07_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ReqResLogs\\ReqResLog_04_07_2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\ReqResLog_04_07_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ReqResLogs\\ReqResLog_05_07_2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\ReqResLog_05_07_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\ReqResLogs\\ReqResLog_30_06_2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\ReqResLog_30_06_2023.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\CSS\\ErrorPage.css",
+      "PackagePath": "staticwebassets\\css\\CSS\\ErrorPage.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\CSS\\application.min.css",
+      "PackagePath": "staticwebassets\\css\\CSS\\application.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\CSS\\lib\\getmdl-select.min.css",
+      "PackagePath": "staticwebassets\\css\\CSS\\lib\\getmdl-select.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\CSS\\lib\\nv.d3.min.css",
+      "PackagePath": "staticwebassets\\css\\CSS\\lib\\nv.d3.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\Notification.css",
+      "PackagePath": "staticwebassets\\css\\Notification.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\1111.jpg",
+      "PackagePath": "staticwebassets\\css\\images\\1111.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\404.svg",
+      "PackagePath": "staticwebassets\\css\\images\\404.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\61227.png",
+      "PackagePath": "staticwebassets\\css\\images\\61227.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\888-8880154_8-pro-tips-to-get-more-out-of.png",
+      "PackagePath": "staticwebassets\\css\\images\\888-8880154_8-pro-tips-to-get-more-out-of.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\Bobby.PNG",
+      "PackagePath": "staticwebassets\\css\\images\\Bobby.PNG"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\DB_16х16.png",
+      "PackagePath": "staticwebassets\\css\\images\\DB_16х16.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\Dark_background_1920x1080.png",
+      "PackagePath": "staticwebassets\\css\\images\\Dark_background_1920x1080.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\Icon.png",
+      "PackagePath": "staticwebassets\\css\\images\\Icon.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\Icon_header.png",
+      "PackagePath": "staticwebassets\\css\\images\\Icon_header.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\active_marker.png",
+      "PackagePath": "staticwebassets\\css\\images\\active_marker.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\buffer.svg",
+      "PackagePath": "staticwebassets\\css\\images\\buffer.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\card.jpg",
+      "PackagePath": "staticwebassets\\css\\images\\card.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\cloudy_and_snow.svg",
+      "PackagePath": "staticwebassets\\css\\images\\cloudy_and_snow.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\cotoneaster.jpg",
+      "PackagePath": "staticwebassets\\css\\images\\cotoneaster.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\gina-torres.png",
+      "PackagePath": "staticwebassets\\css\\images\\gina-torres.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\imgo.png",
+      "PackagePath": "staticwebassets\\css\\images\\imgo.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\istanbul.jpg",
+      "PackagePath": "staticwebassets\\css\\images\\istanbul.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\map_target_images_sprite.png",
+      "PackagePath": "staticwebassets\\css\\images\\map_target_images_sprite.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\marker.png",
+      "PackagePath": "staticwebassets\\css\\images\\marker.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\nathan-fillion.png",
+      "PackagePath": "staticwebassets\\css\\images\\nathan-fillion.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\robot.png",
+      "PackagePath": "staticwebassets\\css\\images\\robot.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\sao_paulo.jpg",
+      "PackagePath": "staticwebassets\\css\\images\\sao_paulo.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\skype.svg",
+      "PackagePath": "staticwebassets\\css\\images\\skype.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\tick-mask.svg",
+      "PackagePath": "staticwebassets\\css\\images\\tick-mask.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\tick.svg",
+      "PackagePath": "staticwebassets\\css\\images\\tick.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\tick_dark.svg",
+      "PackagePath": "staticwebassets\\css\\images\\tick_dark.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\tokyo.jpg",
+      "PackagePath": "staticwebassets\\css\\images\\tokyo.jpg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\tudyk.png",
+      "PackagePath": "staticwebassets\\css\\images\\tudyk.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\watch_white.svg",
+      "PackagePath": "staticwebassets\\css\\images\\watch_white.svg"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\images\\weather_bck.png",
+      "PackagePath": "staticwebassets\\css\\images\\weather_bck.png"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\ErrorJavaScript.js",
+      "PackagePath": "staticwebassets\\javaScript\\ErrorJavaScript.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\d3.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\d3.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\getmdl-select.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\getmdl-select.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\layout\\layout.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\layout\\layout.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\material.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\material.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\nv.d3.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\nv.d3.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\scroll\\scroll.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\scroll\\scroll.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\charts\\discreteBarChart.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\charts\\discreteBarChart.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\charts\\linePlusBarChart.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\charts\\linePlusBarChart.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\charts\\stackedBarChart.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\charts\\stackedBarChart.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\employer-form\\employer-form.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\employer-form\\employer-form.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\line-chart\\line-charts-nvd3.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\line-chart\\line-charts-nvd3.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\map\\maps.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\map\\maps.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\pie-chart\\pie-charts-nvd3.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\pie-chart\\pie-charts-nvd3.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\table\\table.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\table\\table.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\javaScript\\widgets\\todo\\todo.min.js",
+      "PackagePath": "staticwebassets\\javaScript\\widgets\\todo\\todo.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\yansi\\.net core\\Yansi_KalmTraining\\Yansi_KalmTraining\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Yansi_KalmTraining.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Yansi_KalmTraining.props",
+      "PackagePath": "build\\Yansi_KalmTraining.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Yansi_KalmTraining.props",
+      "PackagePath": "buildMultiTargeting\\Yansi_KalmTraining.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Yansi_KalmTraining.props",
+      "PackagePath": "buildTransitive\\Yansi_KalmTraining.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
